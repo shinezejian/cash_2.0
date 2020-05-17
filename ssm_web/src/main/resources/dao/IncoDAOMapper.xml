@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cash.erp.dao.IncoDAOMapper">
+  <resultMap id="BaseResultMap" type="com.com.casherp.entity.IncoDAO">
+    <result column="PK_INCO" jdbcType="INTEGER" property="pkInco" />
+    <result column="INAME" jdbcType="CHAR" property="iname" />
+    <result column="IINVNO" jdbcType="CHAR" property="iinvno" />
+    <result column="ITYPE" jdbcType="CHAR" property="itype" />
+    <result column="IDATE" jdbcType="DATE" property="idate" />
+    <result column="IANR1" jdbcType="CHAR" property="ianr1" />
+    <result column="IANR2" jdbcType="CHAR" property="ianr2" />
+    <result column="IANR3" jdbcType="CHAR" property="ianr3" />
+    <result column="IANR4" jdbcType="CHAR" property="ianr4" />
+    <result column="IANR5" jdbcType="CHAR" property="ianr5" />
+    <result column="IANR6" jdbcType="CHAR" property="ianr6" />
+    <result column="IADM1" jdbcType="DECIMAL" property="iadm1" />
+    <result column="IADM2" jdbcType="DECIMAL" property="iadm2" />
+    <result column="IADM3" jdbcType="DECIMAL" property="iadm3" />
+    <result column="IADM4" jdbcType="DECIMAL" property="iadm4" />
+    <result column="IADM5" jdbcType="DECIMAL" property="iadm5" />
+    <result column="IADM6" jdbcType="DECIMAL" property="iadm6" />
+    <result column="ICURR" jdbcType="CHAR" property="icurr" />
+    <result column="IFACTOR" jdbcType="DECIMAL" property="ifactor" />
+    <result column="INETTO" jdbcType="DECIMAL" property="inetto" />
+    <result column="IVATPR" jdbcType="DECIMAL" property="ivatpr" />
+    <result column="IVATDM" jdbcType="DECIMAL" property="ivatdm" />
+    <result column="IDISPR" jdbcType="DECIMAL" property="idispr" />
+    <result column="IDISDM" jdbcType="DECIMAL" property="idisdm" />
+    <result column="ITOPAYND" jdbcType="DECIMAL" property="itopaynd" />
+    <result column="IOPENND" jdbcType="DECIMAL" property="iopennd" />
+    <result column="IBANK" jdbcType="DECIMAL" property="ibank" />
+    <result column="ISINNO" jdbcType="CHAR" property="isinno" />
+    <result column="IOPEN" jdbcType="DECIMAL" property="iopen" />
+    <result column="IDUE" jdbcType="DATE" property="idue" />
+    <result column="ITOPAY" jdbcType="DECIMAL" property="itopay" />
+    <result column="IPAYD1" jdbcType="DATE" property="ipayd1" />
+    <result column="IPAYDM1" jdbcType="DECIMAL" property="ipaydm1" />
+    <result column="IPAYD2" jdbcType="DATE" property="ipayd2" />
+    <result column="IPAYDM2" jdbcType="DECIMAL" property="ipaydm2" />
+    <result column="IPAYD3" jdbcType="DATE" property="ipayd3" />
+    <result column="IPAYDM3" jdbcType="DECIMAL" property="ipaydm3" />
+    <result column="IREM" jdbcType="CHAR" property="irem" />
+    <result column="IDIS" jdbcType="DATE" property="idis" />
+    <result column="IEXPORT" jdbcType="CHAR" property="iexport" />
+    <result column="STAMP" jdbcType="CHAR" property="stamp" />
+  </resultMap>
+  <insert id="insert" parameterType="com.com.casherp.entity.IncoDAO">
+    insert into inco (PK_INCO, INAME, IINVNO, 
+      ITYPE, IDATE, IANR1, IANR2, 
+      IANR3, IANR4, IANR5, IANR6, 
+      IADM1, IADM2, IADM3, 
+      IADM4, IADM5, IADM6, 
+      ICURR, IFACTOR, INETTO, 
+      IVATPR, IVATDM, IDISPR, 
+      IDISDM, ITOPAYND, IOPENND, 
+      IBANK, ISINNO, IOPEN, 
+      IDUE, ITOPAY, IPAYD1, IPAYDM1, 
+      IPAYD2, IPAYDM2, IPAYD3, 
+      IPAYDM3, IREM, IDIS, IEXPORT, 
+      STAMP)
+    values (#{pkInco,jdbcType=INTEGER}, #{iname,jdbcType=CHAR}, #{iinvno,jdbcType=CHAR}, 
+      #{itype,jdbcType=CHAR}, #{idate,jdbcType=DATE}, #{ianr1,jdbcType=CHAR}, #{ianr2,jdbcType=CHAR}, 
+      #{ianr3,jdbcType=CHAR}, #{ianr4,jdbcType=CHAR}, #{ianr5,jdbcType=CHAR}, #{ianr6,jdbcType=CHAR}, 
+      #{iadm1,jdbcType=DECIMAL}, #{iadm2,jdbcType=DECIMAL}, #{iadm3,jdbcType=DECIMAL}, 
+      #{iadm4,jdbcType=DECIMAL}, #{iadm5,jdbcType=DECIMAL}, #{iadm6,jdbcType=DECIMAL}, 
+      #{icurr,jdbcType=CHAR}, #{ifactor,jdbcType=DECIMAL}, #{inetto,jdbcType=DECIMAL}, 
+      #{ivatpr,jdbcType=DECIMAL}, #{ivatdm,jdbcType=DECIMAL}, #{idispr,jdbcType=DECIMAL}, 
+      #{idisdm,jdbcType=DECIMAL}, #{itopaynd,jdbcType=DECIMAL}, #{iopennd,jdbcType=DECIMAL}, 
+      #{ibank,jdbcType=DECIMAL}, #{isinno,jdbcType=CHAR}, #{iopen,jdbcType=DECIMAL}, 
+      #{idue,jdbcType=DATE}, #{itopay,jdbcType=DECIMAL}, #{ipayd1,jdbcType=DATE}, #{ipaydm1,jdbcType=DECIMAL}, 
+      #{ipayd2,jdbcType=DATE}, #{ipaydm2,jdbcType=DECIMAL}, #{ipayd3,jdbcType=DATE}, 
+      #{ipaydm3,jdbcType=DECIMAL}, #{irem,jdbcType=CHAR}, #{idis,jdbcType=DATE}, #{iexport,jdbcType=CHAR}, 
+      #{stamp,jdbcType=CHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.com.casherp.entity.IncoDAO">
+    insert into inco
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="pkInco != null">
+        PK_INCO,
+      </if>
+      <if test="iname != null">
+        INAME,
+      </if>
+      <if test="iinvno != null">
+        IINVNO,
+      </if>
+      <if test="itype != null">
+        ITYPE,
+      </if>
+      <if test="idate != null">
+        IDATE,
+      </if>
+      <if test="ianr1 != null">
+        IANR1,
+      </if>
+      <if test="ianr2 != null">
+        IANR2,
+      </if>
+      <if test="ianr3 != null">
+        IANR3,
+      </if>
+      <if test="ianr4 != null">
+        IANR4,
+      </if>
+      <if test="ianr5 != null">
+        IANR5,
+      </if>
+      <if test="ianr6 != null">
+        IANR6,
+      </if>
+      <if test="iadm1 != null">
+        IADM1,
+      </if>
+      <if test="iadm2 != null">
+        IADM2,
+      </if>
+      <if test="iadm3 != null">
+        IADM3,
+      </if>
+      <if test="iadm4 != null">
+        IADM4,
+      </if>
+      <if test="iadm5 != null">
+        IADM5,
+      </if>
+      <if test="iadm6 != null">
+        IADM6,
+      </if>
+      <if test="icurr != null">
+        ICURR,
+      </if>
+      <if test="ifactor != null">
+        IFACTOR,
+      </if>
+      <if test="inetto != null">
+        INETTO,
+      </if>
+      <if test="ivatpr != null">
+        IVATPR,
+      </if>
+      <if test="ivatdm != null">
+        IVATDM,
+      </if>
+      <if test="idispr != null">
+        IDISPR,
+      </if>
+      <if test="idisdm != null">
+        IDISDM,
+      </if>
+      <if test="itopaynd != null">
+        ITOPAYND,
+      </if>
+      <if test="iopennd != null">
+        IOPENND,
+      </if>
+      <if test="ibank != null">
+        IBANK,
+      </if>
+      <if test="isinno != null">
+        ISINNO,
+      </if>
+      <if test="iopen != null">
+        IOPEN,
+      </if>
+      <if test="idue != null">
+        IDUE,
+      </if>
+      <if test="itopay != null">
+        ITOPAY,
+      </if>
+      <if test="ipayd1 != null">
+        IPAYD1,
+      </if>
+      <if test="ipaydm1 != null">
+        IPAYDM1,
+      </if>
+      <if test="ipayd2 != null">
+        IPAYD2,
+      </if>
+      <if test="ipaydm2 != null">
+        IPAYDM2,
+      </if>
+      <if test="ipayd3 != null">
+        IPAYD3,
+      </if>
+      <if test="ipaydm3 != null">
+        IPAYDM3,
+      </if>
+      <if test="irem != null">
+        IREM,
+      </if>
+      <if test="idis != null">
+        IDIS,
+      </if>
+      <if test="iexport != null">
+        IEXPORT,
+      </if>
+      <if test="stamp != null">
+        STAMP,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="pkInco != null">
+        #{pkInco,jdbcType=INTEGER},
+      </if>
+      <if test="iname != null">
+        #{iname,jdbcType=CHAR},
+      </if>
+      <if test="iinvno != null">
+        #{iinvno,jdbcType=CHAR},
+      </if>
+      <if test="itype != null">
+        #{itype,jdbcType=CHAR},
+      </if>
+      <if test="idate != null">
+        #{idate,jdbcType=DATE},
+      </if>
+      <if test="ianr1 != null">
+        #{ianr1,jdbcType=CHAR},
+      </if>
+      <if test="ianr2 != null">
+        #{ianr2,jdbcType=CHAR},
+      </if>
+      <if test="ianr3 != null">
+        #{ianr3,jdbcType=CHAR},
+      </if>
+      <if test="ianr4 != null">
+        #{ianr4,jdbcType=CHAR},
+      </if>
+      <if test="ianr5 != null">
+        #{ianr5,jdbcType=CHAR},
+      </if>
+      <if test="ianr6 != null">
+        #{ianr6,jdbcType=CHAR},
+      </if>
+      <if test="iadm1 != null">
+        #{iadm1,jdbcType=DECIMAL},
+      </if>
+      <if test="iadm2 != null">
+        #{iadm2,jdbcType=DECIMAL},
+      </if>
+      <if test="iadm3 != null">
+        #{iadm3,jdbcType=DECIMAL},
+      </if>
+      <if test="iadm4 != null">
+        #{iadm4,jdbcType=DECIMAL},
+      </if>
+      <if test="iadm5 != null">
+        #{iadm5,jdbcType=DECIMAL},
+      </if>
+      <if test="iadm6 != null">
+        #{iadm6,jdbcType=DECIMAL},
+      </if>
+      <if test="icurr != null">
+        #{icurr,jdbcType=CHAR},
+      </if>
+      <if test="ifactor != null">
+        #{ifactor,jdbcType=DECIMAL},
+      </if>
+      <if test="inetto != null">
+        #{inetto,jdbcType=DECIMAL},
+      </if>
+      <if test="ivatpr != null">
+        #{ivatpr,jdbcType=DECIMAL},
+      </if>
+      <if test="ivatdm != null">
+        #{ivatdm,jdbcType=DECIMAL},
+      </if>
+      <if test="idispr != null">
+        #{idispr,jdbcType=DECIMAL},
+      </if>
+      <if test="idisdm != null">
+        #{idisdm,jdbcType=DECIMAL},
+      </if>
+      <if test="itopaynd != null">
+        #{itopaynd,jdbcType=DECIMAL},
+      </if>
+      <if test="iopennd != null">
+        #{iopennd,jdbcType=DECIMAL},
+      </if>
+      <if test="ibank != null">
+        #{ibank,jdbcType=DECIMAL},
+      </if>
+      <if test="isinno != null">
+        #{isinno,jdbcType=CHAR},
+      </if>
+      <if test="iopen != null">
+        #{iopen,jdbcType=DECIMAL},
+      </if>
+      <if test="idue != null">
+        #{idue,jdbcType=DATE},
+      </if>
+      <if test="itopay != null">
+        #{itopay,jdbcType=DECIMAL},
+      </if>
+      <if test="ipayd1 != null">
+        #{ipayd1,jdbcType=DATE},
+      </if>
+      <if test="ipaydm1 != null">
+        #{ipaydm1,jdbcType=DECIMAL},
+      </if>
+      <if test="ipayd2 != null">
+        #{ipayd2,jdbcType=DATE},
+      </if>
+      <if test="ipaydm2 != null">
+        #{ipaydm2,jdbcType=DECIMAL},
+      </if>
+      <if test="ipayd3 != null">
+        #{ipayd3,jdbcType=DATE},
+      </if>
+      <if test="ipaydm3 != null">
+        #{ipaydm3,jdbcType=DECIMAL},
+      </if>
+      <if test="irem != null">
+        #{irem,jdbcType=CHAR},
+      </if>
+      <if test="idis != null">
+        #{idis,jdbcType=DATE},
+      </if>
+      <if test="iexport != null">
+        #{iexport,jdbcType=CHAR},
+      </if>
+      <if test="stamp != null">
+        #{stamp,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

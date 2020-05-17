@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand />
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="9611b72e-d474-4abc-a999-9353cfecc683" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="preferences.fileTypes" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="673" y="-625" key="Github.ShareDialog" timestamp="1589722964886">
+      <screen x="-165" y="-1057" width="1920" height="1057" />
+    </state>
+    <state x="673" y="-625" key="Github.ShareDialog/48.23.1632.1027/-165.-1057.1920.1057@-165.-1057.1920.1057" timestamp="1589722964886" />
+    <state x="737" y="-817" width="569" height="576" key="Github.UntrackedFilesDialog" timestamp="1589722972107">
+      <screen x="-165" y="-1057" width="1920" height="1057" />
+    </state>
+    <state x="737" y="-817" width="569" height="576" key="Github.UntrackedFilesDialog/48.23.1632.1027/-165.-1057.1920.1057@-165.-1057.1920.1057" timestamp="1589722972107" />
+    <state x="304" y="-890" key="SettingsEditor" timestamp="1589721027461">
+      <screen x="-165" y="-1057" width="1920" height="1057" />
+    </state>
+    <state x="304" y="-890" key="SettingsEditor/48.23.1632.1027/-165.-1057.1920.1057@-165.-1057.1920.1057" timestamp="1589721027461" />
+    <state x="640" y="-633" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1589722799384">
+      <screen x="-165" y="-1057" width="1920" height="1057" />
+    </state>
+    <state x="640" y="-633" key="git4idea.remote.GitConfigureRemotesDialog/48.23.1632.1027/-165.-1057.1920.1057@-165.-1057.1920.1057" timestamp="1589722799384" />
+  </component>
+</project>

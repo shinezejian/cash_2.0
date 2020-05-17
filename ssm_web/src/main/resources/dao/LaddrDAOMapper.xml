@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cash.erp.dao.LaddrDAOMapper">
+  <resultMap id="BaseResultMap" type="com.com.casherp.entity.LaddrDAO">
+    <result column="PK_LADDR" jdbcType="INTEGER" property="pkLaddr" />
+    <result column="FK_KUNDEN" jdbcType="INTEGER" property="fkKunden" />
+    <result column="LKUNUM" jdbcType="CHAR" property="lkunum" />
+    <result column="LORT" jdbcType="CHAR" property="lort" />
+    <result column="LKURZ" jdbcType="CHAR" property="lkurz" />
+    <result column="LADR1" jdbcType="CHAR" property="ladr1" />
+    <result column="LADR2" jdbcType="CHAR" property="ladr2" />
+    <result column="LADR3" jdbcType="CHAR" property="ladr3" />
+    <result column="LADR4" jdbcType="CHAR" property="ladr4" />
+    <result column="LADR5" jdbcType="CHAR" property="ladr5" />
+    <result column="LADR6" jdbcType="CHAR" property="ladr6" />
+    <result column="LADR7" jdbcType="CHAR" property="ladr7" />
+    <result column="LKINDEX" jdbcType="CHAR" property="lkindex" />
+    <result column="STAMP" jdbcType="CHAR" property="stamp" />
+  </resultMap>
+  <insert id="insert" parameterType="com.com.casherp.entity.LaddrDAO">
+    insert into laddr (PK_LADDR, FK_KUNDEN, LKUNUM, 
+      LORT, LKURZ, LADR1, LADR2, 
+      LADR3, LADR4, LADR5, LADR6, 
+      LADR7, LKINDEX, STAMP)
+    values (#{pkLaddr,jdbcType=INTEGER}, #{fkKunden,jdbcType=INTEGER}, #{lkunum,jdbcType=CHAR}, 
+      #{lort,jdbcType=CHAR}, #{lkurz,jdbcType=CHAR}, #{ladr1,jdbcType=CHAR}, #{ladr2,jdbcType=CHAR}, 
+      #{ladr3,jdbcType=CHAR}, #{ladr4,jdbcType=CHAR}, #{ladr5,jdbcType=CHAR}, #{ladr6,jdbcType=CHAR}, 
+      #{ladr7,jdbcType=CHAR}, #{lkindex,jdbcType=CHAR}, #{stamp,jdbcType=CHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.com.casherp.entity.LaddrDAO">
+    insert into laddr
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="pkLaddr != null">
+        PK_LADDR,
+      </if>
+      <if test="fkKunden != null">
+        FK_KUNDEN,
+      </if>
+      <if test="lkunum != null">
+        LKUNUM,
+      </if>
+      <if test="lort != null">
+        LORT,
+      </if>
+      <if test="lkurz != null">
+        LKURZ,
+      </if>
+      <if test="ladr1 != null">
+        LADR1,
+      </if>
+      <if test="ladr2 != null">
+        LADR2,
+      </if>
+      <if test="ladr3 != null">
+        LADR3,
+      </if>
+      <if test="ladr4 != null">
+        LADR4,
+      </if>
+      <if test="ladr5 != null">
+        LADR5,
+      </if>
+      <if test="ladr6 != null">
+        LADR6,
+      </if>
+      <if test="ladr7 != null">
+        LADR7,
+      </if>
+      <if test="lkindex != null">
+        LKINDEX,
+      </if>
+      <if test="stamp != null">
+        STAMP,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="pkLaddr != null">
+        #{pkLaddr,jdbcType=INTEGER},
+      </if>
+      <if test="fkKunden != null">
+        #{fkKunden,jdbcType=INTEGER},
+      </if>
+      <if test="lkunum != null">
+        #{lkunum,jdbcType=CHAR},
+      </if>
+      <if test="lort != null">
+        #{lort,jdbcType=CHAR},
+      </if>
+      <if test="lkurz != null">
+        #{lkurz,jdbcType=CHAR},
+      </if>
+      <if test="ladr1 != null">
+        #{ladr1,jdbcType=CHAR},
+      </if>
+      <if test="ladr2 != null">
+        #{ladr2,jdbcType=CHAR},
+      </if>
+      <if test="ladr3 != null">
+        #{ladr3,jdbcType=CHAR},
+      </if>
+      <if test="ladr4 != null">
+        #{ladr4,jdbcType=CHAR},
+      </if>
+      <if test="ladr5 != null">
+        #{ladr5,jdbcType=CHAR},
+      </if>
+      <if test="ladr6 != null">
+        #{ladr6,jdbcType=CHAR},
+      </if>
+      <if test="ladr7 != null">
+        #{ladr7,jdbcType=CHAR},
+      </if>
+      <if test="lkindex != null">
+        #{lkindex,jdbcType=CHAR},
+      </if>
+      <if test="stamp != null">
+        #{stamp,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

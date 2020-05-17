@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cash.erp.dao.OutgoDAOMapper">
+  <resultMap id="BaseResultMap" type="com.com.casherp.entity.OutgoDAO">
+    <result column="PK_OUTGO" jdbcType="INTEGER" property="pkOutgo" />
+    <result column="FK_AUFTRAG" jdbcType="INTEGER" property="fkAuftrag" />
+    <result column="OCUST" jdbcType="CHAR" property="ocust" />
+    <result column="OINVNO" jdbcType="CHAR" property="oinvno" />
+    <result column="OTYPE" jdbcType="CHAR" property="otype" />
+    <result column="OAUFNO" jdbcType="CHAR" property="oaufno" />
+    <result column="OCURR" jdbcType="CHAR" property="ocurr" />
+    <result column="OCFACTOR" jdbcType="DECIMAL" property="ocfactor" />
+    <result column="ODATE" jdbcType="DATE" property="odate" />
+    <result column="OVATCO" jdbcType="CHAR" property="ovatco" />
+    <result column="OVATPR" jdbcType="DECIMAL" property="ovatpr" />
+    <result column="OVATDM" jdbcType="DECIMAL" property="ovatdm" />
+    <result column="ODISPROZ" jdbcType="DECIMAL" property="odisproz" />
+    <result column="ODISDM" jdbcType="DECIMAL" property="odisdm" />
+    <result column="OSONDE" jdbcType="DECIMAL" property="osonde" />
+    <result column="ONETTO" jdbcType="DECIMAL" property="onetto" />
+    <result column="OTOPAY" jdbcType="DECIMAL" property="otopay" />
+    <result column="ODUE" jdbcType="DATE" property="odue" />
+    <result column="OPAYD1" jdbcType="DATE" property="opayd1" />
+    <result column="OPAYDM1" jdbcType="DECIMAL" property="opaydm1" />
+    <result column="OPAYD2" jdbcType="DATE" property="opayd2" />
+    <result column="OPAYDM2" jdbcType="DECIMAL" property="opaydm2" />
+    <result column="OPAYD3" jdbcType="DATE" property="opayd3" />
+    <result column="OPAYDM3" jdbcType="DECIMAL" property="opaydm3" />
+    <result column="OEXPORT" jdbcType="CHAR" property="oexport" />
+    <result column="OBANK" jdbcType="DECIMAL" property="obank" />
+    <result column="OCUSTNAM" jdbcType="CHAR" property="ocustnam" />
+    <result column="OOPEN" jdbcType="DECIMAL" property="oopen" />
+    <result column="OFACTO2" jdbcType="DECIMAL" property="ofacto2" />
+    <result column="OFACTO3" jdbcType="DECIMAL" property="ofacto3" />
+    <result column="OREM" jdbcType="CHAR" property="orem" />
+    <result column="OREF" jdbcType="CHAR" property="oref" />
+    <result column="STAMP" jdbcType="CHAR" property="stamp" />
+  </resultMap>
+  <insert id="insert" parameterType="com.com.casherp.entity.OutgoDAO">
+    insert into outgo (PK_OUTGO, FK_AUFTRAG, OCUST, 
+      OINVNO, OTYPE, OAUFNO, OCURR, 
+      OCFACTOR, ODATE, OVATCO, 
+      OVATPR, OVATDM, ODISPROZ, 
+      ODISDM, OSONDE, ONETTO, 
+      OTOPAY, ODUE, OPAYD1, OPAYDM1, 
+      OPAYD2, OPAYDM2, OPAYD3, 
+      OPAYDM3, OEXPORT, OBANK, 
+      OCUSTNAM, OOPEN, OFACTO2, 
+      OFACTO3, OREM, OREF, STAMP
+      )
+    values (#{pkOutgo,jdbcType=INTEGER}, #{fkAuftrag,jdbcType=INTEGER}, #{ocust,jdbcType=CHAR}, 
+      #{oinvno,jdbcType=CHAR}, #{otype,jdbcType=CHAR}, #{oaufno,jdbcType=CHAR}, #{ocurr,jdbcType=CHAR}, 
+      #{ocfactor,jdbcType=DECIMAL}, #{odate,jdbcType=DATE}, #{ovatco,jdbcType=CHAR}, 
+      #{ovatpr,jdbcType=DECIMAL}, #{ovatdm,jdbcType=DECIMAL}, #{odisproz,jdbcType=DECIMAL}, 
+      #{odisdm,jdbcType=DECIMAL}, #{osonde,jdbcType=DECIMAL}, #{onetto,jdbcType=DECIMAL}, 
+      #{otopay,jdbcType=DECIMAL}, #{odue,jdbcType=DATE}, #{opayd1,jdbcType=DATE}, #{opaydm1,jdbcType=DECIMAL}, 
+      #{opayd2,jdbcType=DATE}, #{opaydm2,jdbcType=DECIMAL}, #{opayd3,jdbcType=DATE}, 
+      #{opaydm3,jdbcType=DECIMAL}, #{oexport,jdbcType=CHAR}, #{obank,jdbcType=DECIMAL}, 
+      #{ocustnam,jdbcType=CHAR}, #{oopen,jdbcType=DECIMAL}, #{ofacto2,jdbcType=DECIMAL}, 
+      #{ofacto3,jdbcType=DECIMAL}, #{orem,jdbcType=CHAR}, #{oref,jdbcType=CHAR}, #{stamp,jdbcType=CHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.com.casherp.entity.OutgoDAO">
+    insert into outgo
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="pkOutgo != null">
+        PK_OUTGO,
+      </if>
+      <if test="fkAuftrag != null">
+        FK_AUFTRAG,
+      </if>
+      <if test="ocust != null">
+        OCUST,
+      </if>
+      <if test="oinvno != null">
+        OINVNO,
+      </if>
+      <if test="otype != null">
+        OTYPE,
+      </if>
+      <if test="oaufno != null">
+        OAUFNO,
+      </if>
+      <if test="ocurr != null">
+        OCURR,
+      </if>
+      <if test="ocfactor != null">
+        OCFACTOR,
+      </if>
+      <if test="odate != null">
+        ODATE,
+      </if>
+      <if test="ovatco != null">
+        OVATCO,
+      </if>
+      <if test="ovatpr != null">
+        OVATPR,
+      </if>
+      <if test="ovatdm != null">
+        OVATDM,
+      </if>
+      <if test="odisproz != null">
+        ODISPROZ,
+      </if>
+      <if test="odisdm != null">
+        ODISDM,
+      </if>
+      <if test="osonde != null">
+        OSONDE,
+      </if>
+      <if test="onetto != null">
+        ONETTO,
+      </if>
+      <if test="otopay != null">
+        OTOPAY,
+      </if>
+      <if test="odue != null">
+        ODUE,
+      </if>
+      <if test="opayd1 != null">
+        OPAYD1,
+      </if>
+      <if test="opaydm1 != null">
+        OPAYDM1,
+      </if>
+      <if test="opayd2 != null">
+        OPAYD2,
+      </if>
+      <if test="opaydm2 != null">
+        OPAYDM2,
+      </if>
+      <if test="opayd3 != null">
+        OPAYD3,
+      </if>
+      <if test="opaydm3 != null">
+        OPAYDM3,
+      </if>
+      <if test="oexport != null">
+        OEXPORT,
+      </if>
+      <if test="obank != null">
+        OBANK,
+      </if>
+      <if test="ocustnam != null">
+        OCUSTNAM,
+      </if>
+      <if test="oopen != null">
+        OOPEN,
+      </if>
+      <if test="ofacto2 != null">
+        OFACTO2,
+      </if>
+      <if test="ofacto3 != null">
+        OFACTO3,
+      </if>
+      <if test="orem != null">
+        OREM,
+      </if>
+      <if test="oref != null">
+        OREF,
+      </if>
+      <if test="stamp != null">
+        STAMP,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="pkOutgo != null">
+        #{pkOutgo,jdbcType=INTEGER},
+      </if>
+      <if test="fkAuftrag != null">
+        #{fkAuftrag,jdbcType=INTEGER},
+      </if>
+      <if test="ocust != null">
+        #{ocust,jdbcType=CHAR},
+      </if>
+      <if test="oinvno != null">
+        #{oinvno,jdbcType=CHAR},
+      </if>
+      <if test="otype != null">
+        #{otype,jdbcType=CHAR},
+      </if>
+      <if test="oaufno != null">
+        #{oaufno,jdbcType=CHAR},
+      </if>
+      <if test="ocurr != null">
+        #{ocurr,jdbcType=CHAR},
+      </if>
+      <if test="ocfactor != null">
+        #{ocfactor,jdbcType=DECIMAL},
+      </if>
+      <if test="odate != null">
+        #{odate,jdbcType=DATE},
+      </if>
+      <if test="ovatco != null">
+        #{ovatco,jdbcType=CHAR},
+      </if>
+      <if test="ovatpr != null">
+        #{ovatpr,jdbcType=DECIMAL},
+      </if>
+      <if test="ovatdm != null">
+        #{ovatdm,jdbcType=DECIMAL},
+      </if>
+      <if test="odisproz != null">
+        #{odisproz,jdbcType=DECIMAL},
+      </if>
+      <if test="odisdm != null">
+        #{odisdm,jdbcType=DECIMAL},
+      </if>
+      <if test="osonde != null">
+        #{osonde,jdbcType=DECIMAL},
+      </if>
+      <if test="onetto != null">
+        #{onetto,jdbcType=DECIMAL},
+      </if>
+      <if test="otopay != null">
+        #{otopay,jdbcType=DECIMAL},
+      </if>
+      <if test="odue != null">
+        #{odue,jdbcType=DATE},
+      </if>
+      <if test="opayd1 != null">
+        #{opayd1,jdbcType=DATE},
+      </if>
+      <if test="opaydm1 != null">
+        #{opaydm1,jdbcType=DECIMAL},
+      </if>
+      <if test="opayd2 != null">
+        #{opayd2,jdbcType=DATE},
+      </if>
+      <if test="opaydm2 != null">
+        #{opaydm2,jdbcType=DECIMAL},
+      </if>
+      <if test="opayd3 != null">
+        #{opayd3,jdbcType=DATE},
+      </if>
+      <if test="opaydm3 != null">
+        #{opaydm3,jdbcType=DECIMAL},
+      </if>
+      <if test="oexport != null">
+        #{oexport,jdbcType=CHAR},
+      </if>
+      <if test="obank != null">
+        #{obank,jdbcType=DECIMAL},
+      </if>
+      <if test="ocustnam != null">
+        #{ocustnam,jdbcType=CHAR},
+      </if>
+      <if test="oopen != null">
+        #{oopen,jdbcType=DECIMAL},
+      </if>
+      <if test="ofacto2 != null">
+        #{ofacto2,jdbcType=DECIMAL},
+      </if>
+      <if test="ofacto3 != null">
+        #{ofacto3,jdbcType=DECIMAL},
+      </if>
+      <if test="orem != null">
+        #{orem,jdbcType=CHAR},
+      </if>
+      <if test="oref != null">
+        #{oref,jdbcType=CHAR},
+      </if>
+      <if test="stamp != null">
+        #{stamp,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="Cash2.0" target="1.5" />
+      <module name="ssm_dao" target="1.5" />
+      <module name="ssm_domain" target="1.5" />
+      <module name="ssm_service" target="1.5" />
+      <module name="ssm_utils" target="1.5" />
+      <module name="ssm_web" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

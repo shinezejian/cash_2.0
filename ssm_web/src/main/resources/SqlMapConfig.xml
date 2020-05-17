@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <typeAliases>
+
+        <!--type absolute class name ,set alias，aliases are not case sensitive-->
+        <typeAlias type="domain.Product" alias="product"/>
+        <typeAlias type="domain.Orders" alias="orders"/>
+        <typeAlias type="domain.Member" alias="member"/>
+        <typeAlias type="domain.Traveller" alias="traveller"/>
+        <typeAlias type="domain.User" alias="user"/>
+        <typeAlias type="domain.Role" alias="role"/>
+        <typeAlias type="domain.Permission" alias="permission"/>
+        <typeAlias type="domain.SysLog" alias="log"/>
+
+        <typeAlias type="com.cash.erp.entity.AuftragDAO" alias="AuftragDAO"/>
+        <typeAlias type="com.cash.erp.entity.CashContactDAO" alias="CashContactDAO"/>
+        <typeAlias type="com.cash.erp.entity.CashDAO" alias="CashDAO"/>
+        <typeAlias type="com.cash.erp.entity.GruppeDAO" alias="GruppeDAO"/>
+        <typeAlias type="com.cash.erp.entity.IncoDAO" alias="IncoDAO"/>
+        <typeAlias type="com.cash.erp.entity.InvoiceDAO" alias="InvoiceDAO"/>
+        <typeAlias type="com.cash.erp.entity.KundenContactDAO" alias="KundenContactDAO"/>
+        <typeAlias type="com.cash.erp.entity.KundenDAO" alias="KundenDAO"/>
+        <typeAlias type="com.cash.erp.entity.KurseDAO" alias="KurseDAO"/>
+        <typeAlias type="com.cash.erp.entity.LaddrDAO" alias="LaddrDAO"/>
+        <typeAlias type="com.cash.erp.entity.OutgoDAO" alias="OutgoDAO"/>
+        <typeAlias type="com.cash.erp.entity.PosDAO" alias="PosDAO"/>
+        <typeAlias type="com.cash.erp.entity.User3DAO" alias="User3DAO"/>
+    </typeAliases>
+
+    <!-- mapping dao (/server-project/SSM_Maneger_DEMO/ssm_web/src/main/resources/dao)-->
+    <mappers>
+        <mapper resource="dao/ProductMapper"/>
+        <mapper resource="dao/OrderMapper"/>
+        <mapper resource="dao/MemberMapper"/>
+        <mapper resource="dao/TravellerMapper"/>
+        <mapper resource="dao/UserMapper"/>
+        <mapper resource="dao/RoleMapper"/>
+        <mapper resource="dao/PermissionMapper"/>
+        <mapper resource="dao/User_RoleMapper"/>
+        <mapper resource="dao/SysLogMapper"/>
+
+
+        <mapper resource="dao/AuftragDAOMapper"/>
+        <mapper resource="dao/CashContactDAOMapper"/>
+        <mapper resource="dao/CashDAOMapper"/>
+        <mapper resource="dao/GruppeDAOMapper"/>
+        <mapper resource="dao/IncoDAOMapper"/>
+        <mapper resource="dao/InvoiceDAOMapper"/>
+        <mapper resource="dao/KundenContactDAOMapper"/>
+        <mapper resource="dao/KundenDAOMapper"/>
+        <mapper resource="dao/KurseDAOMapper"/>
+        <mapper resource="dao/LaddrDAOMapper"/>
+        <mapper resource="dao/OutgoDAOMapper"/>
+        <mapper resource="dao/PosDAOMapper"/>
+        <mapper resource="dao/User3DAOMapper"/>
+    </mappers>
+</configuration>

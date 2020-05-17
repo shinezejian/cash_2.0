@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cash.erp.dao.User3DAOMapper">
+  <resultMap id="BaseResultMap" type="com.com.casherp.entity.User3DAO">
+    <id column="PK_USER" jdbcType="INTEGER" property="pkUser" />
+    <result column="FK_GRUPPE" jdbcType="INTEGER" property="fkGruppe" />
+    <result column="USERNAME" jdbcType="CHAR" property="username" />
+    <result column="PASSWORD" jdbcType="CHAR" property="password" />
+    <result column="ANREDE" jdbcType="CHAR" property="anrede" />
+    <result column="FULLNAME" jdbcType="CHAR" property="fullname" />
+    <result column="DAT_CREATED" jdbcType="CHAR" property="datCreated" />
+    <result column="DAT_UPDATED" jdbcType="CHAR" property="datUpdated" />
+    <result column="DAT_UNTIL" jdbcType="CHAR" property="datUntil" />
+    <result column="INTERNAL_ID" jdbcType="CHAR" property="internalId" />
+    <result column="TEL1" jdbcType="VARCHAR" property="tel1" />
+    <result column="TEL2" jdbcType="VARCHAR" property="tel2" />
+    <result column="EMAIL" jdbcType="VARCHAR" property="email" />
+    <result column="ADDRESS" jdbcType="VARCHAR" property="address" />
+    <result column="STAMP" jdbcType="VARCHAR" property="stamp" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    PK_USER, FK_GRUPPE, USERNAME, PASSWORD, ANREDE, FULLNAME, DAT_CREATED, DAT_UPDATED, 
+    DAT_UNTIL, INTERNAL_ID, TEL1, TEL2, EMAIL, ADDRESS, STAMP
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from user3
+    where PK_USER = #{pkUser,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from user3
+    where PK_USER = #{pkUser,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.com.casherp.entity.User3DAO">
+    insert into user3 (PK_USER, FK_GRUPPE, USERNAME, 
+      PASSWORD, ANREDE, FULLNAME, 
+      DAT_CREATED, DAT_UPDATED, DAT_UNTIL, 
+      INTERNAL_ID, TEL1, TEL2, 
+      EMAIL, ADDRESS, STAMP
+      )
+    values (#{pkUser,jdbcType=INTEGER}, #{fkGruppe,jdbcType=INTEGER}, #{username,jdbcType=CHAR}, 
+      #{password,jdbcType=CHAR}, #{anrede,jdbcType=CHAR}, #{fullname,jdbcType=CHAR}, 
+      #{datCreated,jdbcType=CHAR}, #{datUpdated,jdbcType=CHAR}, #{datUntil,jdbcType=CHAR}, 
+      #{internalId,jdbcType=CHAR}, #{tel1,jdbcType=VARCHAR}, #{tel2,jdbcType=VARCHAR}, 
+      #{email,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, #{stamp,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.com.casherp.entity.User3DAO">
+    insert into user3
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="pkUser != null">
+        PK_USER,
+      </if>
+      <if test="fkGruppe != null">
+        FK_GRUPPE,
+      </if>
+      <if test="username != null">
+        USERNAME,
+      </if>
+      <if test="password != null">
+        PASSWORD,
+      </if>
+      <if test="anrede != null">
+        ANREDE,
+      </if>
+      <if test="fullname != null">
+        FULLNAME,
+      </if>
+      <if test="datCreated != null">
+        DAT_CREATED,
+      </if>
+      <if test="datUpdated != null">
+        DAT_UPDATED,
+      </if>
+      <if test="datUntil != null">
+        DAT_UNTIL,
+      </if>
+      <if test="internalId != null">
+        INTERNAL_ID,
+      </if>
+      <if test="tel1 != null">
+        TEL1,
+      </if>
+      <if test="tel2 != null">
+        TEL2,
+      </if>
+      <if test="email != null">
+        EMAIL,
+      </if>
+      <if test="address != null">
+        ADDRESS,
+      </if>
+      <if test="stamp != null">
+        STAMP,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="pkUser != null">
+        #{pkUser,jdbcType=INTEGER},
+      </if>
+      <if test="fkGruppe != null">
+        #{fkGruppe,jdbcType=INTEGER},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=CHAR},
+      </if>
+      <if test="password != null">
+        #{password,jdbcType=CHAR},
+      </if>
+      <if test="anrede != null">
+        #{anrede,jdbcType=CHAR},
+      </if>
+      <if test="fullname != null">
+        #{fullname,jdbcType=CHAR},
+      </if>
+      <if test="datCreated != null">
+        #{datCreated,jdbcType=CHAR},
+      </if>
+      <if test="datUpdated != null">
+        #{datUpdated,jdbcType=CHAR},
+      </if>
+      <if test="datUntil != null">
+        #{datUntil,jdbcType=CHAR},
+      </if>
+      <if test="internalId != null">
+        #{internalId,jdbcType=CHAR},
+      </if>
+      <if test="tel1 != null">
+        #{tel1,jdbcType=VARCHAR},
+      </if>
+      <if test="tel2 != null">
+        #{tel2,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null">
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="stamp != null">
+        #{stamp,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.com.casherp.entity.User3DAO">
+    update user3
+    <set>
+      <if test="fkGruppe != null">
+        FK_GRUPPE = #{fkGruppe,jdbcType=INTEGER},
+      </if>
+      <if test="username != null">
+        USERNAME = #{username,jdbcType=CHAR},
+      </if>
+      <if test="password != null">
+        PASSWORD = #{password,jdbcType=CHAR},
+      </if>
+      <if test="anrede != null">
+        ANREDE = #{anrede,jdbcType=CHAR},
+      </if>
+      <if test="fullname != null">
+        FULLNAME = #{fullname,jdbcType=CHAR},
+      </if>
+      <if test="datCreated != null">
+        DAT_CREATED = #{datCreated,jdbcType=CHAR},
+      </if>
+      <if test="datUpdated != null">
+        DAT_UPDATED = #{datUpdated,jdbcType=CHAR},
+      </if>
+      <if test="datUntil != null">
+        DAT_UNTIL = #{datUntil,jdbcType=CHAR},
+      </if>
+      <if test="internalId != null">
+        INTERNAL_ID = #{internalId,jdbcType=CHAR},
+      </if>
+      <if test="tel1 != null">
+        TEL1 = #{tel1,jdbcType=VARCHAR},
+      </if>
+      <if test="tel2 != null">
+        TEL2 = #{tel2,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        EMAIL = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null">
+        ADDRESS = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="stamp != null">
+        STAMP = #{stamp,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where PK_USER = #{pkUser,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.com.casherp.entity.User3DAO">
+    update user3
+    set FK_GRUPPE = #{fkGruppe,jdbcType=INTEGER},
+      USERNAME = #{username,jdbcType=CHAR},
+      PASSWORD = #{password,jdbcType=CHAR},
+      ANREDE = #{anrede,jdbcType=CHAR},
+      FULLNAME = #{fullname,jdbcType=CHAR},
+      DAT_CREATED = #{datCreated,jdbcType=CHAR},
+      DAT_UPDATED = #{datUpdated,jdbcType=CHAR},
+      DAT_UNTIL = #{datUntil,jdbcType=CHAR},
+      INTERNAL_ID = #{internalId,jdbcType=CHAR},
+      TEL1 = #{tel1,jdbcType=VARCHAR},
+      TEL2 = #{tel2,jdbcType=VARCHAR},
+      EMAIL = #{email,jdbcType=VARCHAR},
+      ADDRESS = #{address,jdbcType=VARCHAR},
+      STAMP = #{stamp,jdbcType=VARCHAR}
+    where PK_USER = #{pkUser,jdbcType=INTEGER}
+  </update>
+</mapper>

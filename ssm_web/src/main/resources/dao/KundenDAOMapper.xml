@@ -1,0 +1,675 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cash.erp.dao.KundenDAOMapper">
+  <resultMap id="BaseResultMap" type="com.com.casherp.entity.KundenDAO">
+    <id column="PK_KUNDEN" jdbcType="INTEGER" property="pkKunden" />
+    <result column="FK_LADDR" jdbcType="INTEGER" property="fkLaddr" />
+    <result column="KKUNUM" jdbcType="CHAR" property="kkunum" />
+    <result column="KDATUM" jdbcType="DATE" property="kdatum" />
+    <result column="KSNAME" jdbcType="CHAR" property="ksname" />
+    <result column="KWERBER" jdbcType="CHAR" property="kwerber" />
+    <result column="KBETREU" jdbcType="CHAR" property="kbetreu" />
+    <result column="KGRUPPE" jdbcType="CHAR" property="kgruppe" />
+    <result column="KEHEMALI" jdbcType="CHAR" property="kehemali" />
+    <result column="KTYP" jdbcType="CHAR" property="ktyp" />
+    <result column="KBRT" jdbcType="DECIMAL" property="kbrt" />
+    <result column="KRADDR1" jdbcType="CHAR" property="kraddr1" />
+    <result column="KRADDR2" jdbcType="CHAR" property="kraddr2" />
+    <result column="KRADDR3" jdbcType="CHAR" property="kraddr3" />
+    <result column="KRADDR4" jdbcType="CHAR" property="kraddr4" />
+    <result column="KRADDR5" jdbcType="CHAR" property="kraddr5" />
+    <result column="KRADDR6" jdbcType="CHAR" property="kraddr6" />
+    <result column="KRADDR7" jdbcType="CHAR" property="kraddr7" />
+    <result column="KTEL1" jdbcType="CHAR" property="ktel1" />
+    <result column="KTEL2" jdbcType="CHAR" property="ktel2" />
+    <result column="KTLX" jdbcType="CHAR" property="ktlx" />
+    <result column="KFAX" jdbcType="CHAR" property="kfax" />
+    <result column="KCOPIES" jdbcType="DECIMAL" property="kcopies" />
+    <result column="KMWSTPRO" jdbcType="CHAR" property="kmwstpro" />
+    <result column="KVAT" jdbcType="CHAR" property="kvat" />
+    <result column="KRABA" jdbcType="DECIMAL" property="kraba" />
+    <result column="KZAHLD" jdbcType="CHAR" property="kzahld" />
+    <result column="KZAHLE" jdbcType="CHAR" property="kzahle" />
+    <result column="KSPRACH" jdbcType="CHAR" property="ksprach" />
+    <result column="KREM1" jdbcType="CHAR" property="krem1" />
+    <result column="KREM2" jdbcType="CHAR" property="krem2" />
+    <result column="KREM3" jdbcType="CHAR" property="krem3" />
+    <result column="KREM4" jdbcType="CHAR" property="krem4" />
+    <result column="KROUT1" jdbcType="CHAR" property="krout1" />
+    <result column="KROUT2" jdbcType="CHAR" property="krout2" />
+    <result column="KROUT3" jdbcType="CHAR" property="krout3" />
+    <result column="KROUT4" jdbcType="CHAR" property="krout4" />
+    <result column="KROUTDAT" jdbcType="DATE" property="kroutdat" />
+    <result column="KDATUMLS" jdbcType="CHAR" property="kdatumls" />
+    <result column="KAUFSCHL" jdbcType="DECIMAL" property="kaufschl" />
+    <result column="STAMP" jdbcType="CHAR" property="stamp" />
+    <result column="KBANK" jdbcType="DECIMAL" property="kbank" />
+    <result column="KREDINR" jdbcType="CHAR" property="kredinr" />
+    <result column="KTAGE1" jdbcType="DECIMAL" property="ktage1" />
+    <result column="KPROZ1" jdbcType="CHAR" property="kproz1" />
+    <result column="KTAGE2" jdbcType="DECIMAL" property="ktage2" />
+    <result column="KPROZ2" jdbcType="CHAR" property="kproz2" />
+    <result column="KEMAIL" jdbcType="CHAR" property="kemail" />
+    <result column="FK_KUNDENCONTACT" jdbcType="INTEGER" property="fkKundencontact" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.com.casherp.entity.KundenDAO">
+    <result column="REM" jdbcType="LONGVARCHAR" property="rem" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    PK_KUNDEN, FK_LADDR, KKUNUM, KDATUM, KSNAME, KWERBER, KBETREU, KGRUPPE, KEHEMALI, 
+    KTYP, KBRT, KRADDR1, KRADDR2, KRADDR3, KRADDR4, KRADDR5, KRADDR6, KRADDR7, KTEL1, 
+    KTEL2, KTLX, KFAX, KCOPIES, KMWSTPRO, KVAT, KRABA, KZAHLD, KZAHLE, KSPRACH, KREM1, 
+    KREM2, KREM3, KREM4, KROUT1, KROUT2, KROUT3, KROUT4, KROUTDAT, KDATUMLS, KAUFSCHL, 
+    STAMP, KBANK, KREDINR, KTAGE1, KPROZ1, KTAGE2, KPROZ2, KEMAIL, FK_KUNDENCONTACT
+  </sql>
+  <sql id="Blob_Column_List">
+    REM
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from kunden
+    where PK_KUNDEN = #{pkKunden,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from kunden
+    where PK_KUNDEN = #{pkKunden,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.com.casherp.entity.KundenDAO">
+    insert into kunden (PK_KUNDEN, FK_LADDR, KKUNUM, 
+      KDATUM, KSNAME, KWERBER, KBETREU, 
+      KGRUPPE, KEHEMALI, KTYP, KBRT, 
+      KRADDR1, KRADDR2, KRADDR3, KRADDR4, 
+      KRADDR5, KRADDR6, KRADDR7, KTEL1, 
+      KTEL2, KTLX, KFAX, KCOPIES, 
+      KMWSTPRO, KVAT, KRABA, KZAHLD, 
+      KZAHLE, KSPRACH, KREM1, KREM2, 
+      KREM3, KREM4, KROUT1, KROUT2, 
+      KROUT3, KROUT4, KROUTDAT, KDATUMLS, 
+      KAUFSCHL, STAMP, KBANK, 
+      KREDINR, KTAGE1, KPROZ1, 
+      KTAGE2, KPROZ2, KEMAIL, FK_KUNDENCONTACT, 
+      REM)
+    values (#{pkKunden,jdbcType=INTEGER}, #{fkLaddr,jdbcType=INTEGER}, #{kkunum,jdbcType=CHAR}, 
+      #{kdatum,jdbcType=DATE}, #{ksname,jdbcType=CHAR}, #{kwerber,jdbcType=CHAR}, #{kbetreu,jdbcType=CHAR}, 
+      #{kgruppe,jdbcType=CHAR}, #{kehemali,jdbcType=CHAR}, #{ktyp,jdbcType=CHAR}, #{kbrt,jdbcType=DECIMAL}, 
+      #{kraddr1,jdbcType=CHAR}, #{kraddr2,jdbcType=CHAR}, #{kraddr3,jdbcType=CHAR}, #{kraddr4,jdbcType=CHAR}, 
+      #{kraddr5,jdbcType=CHAR}, #{kraddr6,jdbcType=CHAR}, #{kraddr7,jdbcType=CHAR}, #{ktel1,jdbcType=CHAR}, 
+      #{ktel2,jdbcType=CHAR}, #{ktlx,jdbcType=CHAR}, #{kfax,jdbcType=CHAR}, #{kcopies,jdbcType=DECIMAL}, 
+      #{kmwstpro,jdbcType=CHAR}, #{kvat,jdbcType=CHAR}, #{kraba,jdbcType=DECIMAL}, #{kzahld,jdbcType=CHAR}, 
+      #{kzahle,jdbcType=CHAR}, #{ksprach,jdbcType=CHAR}, #{krem1,jdbcType=CHAR}, #{krem2,jdbcType=CHAR}, 
+      #{krem3,jdbcType=CHAR}, #{krem4,jdbcType=CHAR}, #{krout1,jdbcType=CHAR}, #{krout2,jdbcType=CHAR}, 
+      #{krout3,jdbcType=CHAR}, #{krout4,jdbcType=CHAR}, #{kroutdat,jdbcType=DATE}, #{kdatumls,jdbcType=CHAR}, 
+      #{kaufschl,jdbcType=DECIMAL}, #{stamp,jdbcType=CHAR}, #{kbank,jdbcType=DECIMAL}, 
+      #{kredinr,jdbcType=CHAR}, #{ktage1,jdbcType=DECIMAL}, #{kproz1,jdbcType=CHAR}, 
+      #{ktage2,jdbcType=DECIMAL}, #{kproz2,jdbcType=CHAR}, #{kemail,jdbcType=CHAR}, #{fkKundencontact,jdbcType=INTEGER}, 
+      #{rem,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.com.casherp.entity.KundenDAO">
+    insert into kunden
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="pkKunden != null">
+        PK_KUNDEN,
+      </if>
+      <if test="fkLaddr != null">
+        FK_LADDR,
+      </if>
+      <if test="kkunum != null">
+        KKUNUM,
+      </if>
+      <if test="kdatum != null">
+        KDATUM,
+      </if>
+      <if test="ksname != null">
+        KSNAME,
+      </if>
+      <if test="kwerber != null">
+        KWERBER,
+      </if>
+      <if test="kbetreu != null">
+        KBETREU,
+      </if>
+      <if test="kgruppe != null">
+        KGRUPPE,
+      </if>
+      <if test="kehemali != null">
+        KEHEMALI,
+      </if>
+      <if test="ktyp != null">
+        KTYP,
+      </if>
+      <if test="kbrt != null">
+        KBRT,
+      </if>
+      <if test="kraddr1 != null">
+        KRADDR1,
+      </if>
+      <if test="kraddr2 != null">
+        KRADDR2,
+      </if>
+      <if test="kraddr3 != null">
+        KRADDR3,
+      </if>
+      <if test="kraddr4 != null">
+        KRADDR4,
+      </if>
+      <if test="kraddr5 != null">
+        KRADDR5,
+      </if>
+      <if test="kraddr6 != null">
+        KRADDR6,
+      </if>
+      <if test="kraddr7 != null">
+        KRADDR7,
+      </if>
+      <if test="ktel1 != null">
+        KTEL1,
+      </if>
+      <if test="ktel2 != null">
+        KTEL2,
+      </if>
+      <if test="ktlx != null">
+        KTLX,
+      </if>
+      <if test="kfax != null">
+        KFAX,
+      </if>
+      <if test="kcopies != null">
+        KCOPIES,
+      </if>
+      <if test="kmwstpro != null">
+        KMWSTPRO,
+      </if>
+      <if test="kvat != null">
+        KVAT,
+      </if>
+      <if test="kraba != null">
+        KRABA,
+      </if>
+      <if test="kzahld != null">
+        KZAHLD,
+      </if>
+      <if test="kzahle != null">
+        KZAHLE,
+      </if>
+      <if test="ksprach != null">
+        KSPRACH,
+      </if>
+      <if test="krem1 != null">
+        KREM1,
+      </if>
+      <if test="krem2 != null">
+        KREM2,
+      </if>
+      <if test="krem3 != null">
+        KREM3,
+      </if>
+      <if test="krem4 != null">
+        KREM4,
+      </if>
+      <if test="krout1 != null">
+        KROUT1,
+      </if>
+      <if test="krout2 != null">
+        KROUT2,
+      </if>
+      <if test="krout3 != null">
+        KROUT3,
+      </if>
+      <if test="krout4 != null">
+        KROUT4,
+      </if>
+      <if test="kroutdat != null">
+        KROUTDAT,
+      </if>
+      <if test="kdatumls != null">
+        KDATUMLS,
+      </if>
+      <if test="kaufschl != null">
+        KAUFSCHL,
+      </if>
+      <if test="stamp != null">
+        STAMP,
+      </if>
+      <if test="kbank != null">
+        KBANK,
+      </if>
+      <if test="kredinr != null">
+        KREDINR,
+      </if>
+      <if test="ktage1 != null">
+        KTAGE1,
+      </if>
+      <if test="kproz1 != null">
+        KPROZ1,
+      </if>
+      <if test="ktage2 != null">
+        KTAGE2,
+      </if>
+      <if test="kproz2 != null">
+        KPROZ2,
+      </if>
+      <if test="kemail != null">
+        KEMAIL,
+      </if>
+      <if test="fkKundencontact != null">
+        FK_KUNDENCONTACT,
+      </if>
+      <if test="rem != null">
+        REM,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="pkKunden != null">
+        #{pkKunden,jdbcType=INTEGER},
+      </if>
+      <if test="fkLaddr != null">
+        #{fkLaddr,jdbcType=INTEGER},
+      </if>
+      <if test="kkunum != null">
+        #{kkunum,jdbcType=CHAR},
+      </if>
+      <if test="kdatum != null">
+        #{kdatum,jdbcType=DATE},
+      </if>
+      <if test="ksname != null">
+        #{ksname,jdbcType=CHAR},
+      </if>
+      <if test="kwerber != null">
+        #{kwerber,jdbcType=CHAR},
+      </if>
+      <if test="kbetreu != null">
+        #{kbetreu,jdbcType=CHAR},
+      </if>
+      <if test="kgruppe != null">
+        #{kgruppe,jdbcType=CHAR},
+      </if>
+      <if test="kehemali != null">
+        #{kehemali,jdbcType=CHAR},
+      </if>
+      <if test="ktyp != null">
+        #{ktyp,jdbcType=CHAR},
+      </if>
+      <if test="kbrt != null">
+        #{kbrt,jdbcType=DECIMAL},
+      </if>
+      <if test="kraddr1 != null">
+        #{kraddr1,jdbcType=CHAR},
+      </if>
+      <if test="kraddr2 != null">
+        #{kraddr2,jdbcType=CHAR},
+      </if>
+      <if test="kraddr3 != null">
+        #{kraddr3,jdbcType=CHAR},
+      </if>
+      <if test="kraddr4 != null">
+        #{kraddr4,jdbcType=CHAR},
+      </if>
+      <if test="kraddr5 != null">
+        #{kraddr5,jdbcType=CHAR},
+      </if>
+      <if test="kraddr6 != null">
+        #{kraddr6,jdbcType=CHAR},
+      </if>
+      <if test="kraddr7 != null">
+        #{kraddr7,jdbcType=CHAR},
+      </if>
+      <if test="ktel1 != null">
+        #{ktel1,jdbcType=CHAR},
+      </if>
+      <if test="ktel2 != null">
+        #{ktel2,jdbcType=CHAR},
+      </if>
+      <if test="ktlx != null">
+        #{ktlx,jdbcType=CHAR},
+      </if>
+      <if test="kfax != null">
+        #{kfax,jdbcType=CHAR},
+      </if>
+      <if test="kcopies != null">
+        #{kcopies,jdbcType=DECIMAL},
+      </if>
+      <if test="kmwstpro != null">
+        #{kmwstpro,jdbcType=CHAR},
+      </if>
+      <if test="kvat != null">
+        #{kvat,jdbcType=CHAR},
+      </if>
+      <if test="kraba != null">
+        #{kraba,jdbcType=DECIMAL},
+      </if>
+      <if test="kzahld != null">
+        #{kzahld,jdbcType=CHAR},
+      </if>
+      <if test="kzahle != null">
+        #{kzahle,jdbcType=CHAR},
+      </if>
+      <if test="ksprach != null">
+        #{ksprach,jdbcType=CHAR},
+      </if>
+      <if test="krem1 != null">
+        #{krem1,jdbcType=CHAR},
+      </if>
+      <if test="krem2 != null">
+        #{krem2,jdbcType=CHAR},
+      </if>
+      <if test="krem3 != null">
+        #{krem3,jdbcType=CHAR},
+      </if>
+      <if test="krem4 != null">
+        #{krem4,jdbcType=CHAR},
+      </if>
+      <if test="krout1 != null">
+        #{krout1,jdbcType=CHAR},
+      </if>
+      <if test="krout2 != null">
+        #{krout2,jdbcType=CHAR},
+      </if>
+      <if test="krout3 != null">
+        #{krout3,jdbcType=CHAR},
+      </if>
+      <if test="krout4 != null">
+        #{krout4,jdbcType=CHAR},
+      </if>
+      <if test="kroutdat != null">
+        #{kroutdat,jdbcType=DATE},
+      </if>
+      <if test="kdatumls != null">
+        #{kdatumls,jdbcType=CHAR},
+      </if>
+      <if test="kaufschl != null">
+        #{kaufschl,jdbcType=DECIMAL},
+      </if>
+      <if test="stamp != null">
+        #{stamp,jdbcType=CHAR},
+      </if>
+      <if test="kbank != null">
+        #{kbank,jdbcType=DECIMAL},
+      </if>
+      <if test="kredinr != null">
+        #{kredinr,jdbcType=CHAR},
+      </if>
+      <if test="ktage1 != null">
+        #{ktage1,jdbcType=DECIMAL},
+      </if>
+      <if test="kproz1 != null">
+        #{kproz1,jdbcType=CHAR},
+      </if>
+      <if test="ktage2 != null">
+        #{ktage2,jdbcType=DECIMAL},
+      </if>
+      <if test="kproz2 != null">
+        #{kproz2,jdbcType=CHAR},
+      </if>
+      <if test="kemail != null">
+        #{kemail,jdbcType=CHAR},
+      </if>
+      <if test="fkKundencontact != null">
+        #{fkKundencontact,jdbcType=INTEGER},
+      </if>
+      <if test="rem != null">
+        #{rem,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.com.casherp.entity.KundenDAO">
+    update kunden
+    <set>
+      <if test="fkLaddr != null">
+        FK_LADDR = #{fkLaddr,jdbcType=INTEGER},
+      </if>
+      <if test="kkunum != null">
+        KKUNUM = #{kkunum,jdbcType=CHAR},
+      </if>
+      <if test="kdatum != null">
+        KDATUM = #{kdatum,jdbcType=DATE},
+      </if>
+      <if test="ksname != null">
+        KSNAME = #{ksname,jdbcType=CHAR},
+      </if>
+      <if test="kwerber != null">
+        KWERBER = #{kwerber,jdbcType=CHAR},
+      </if>
+      <if test="kbetreu != null">
+        KBETREU = #{kbetreu,jdbcType=CHAR},
+      </if>
+      <if test="kgruppe != null">
+        KGRUPPE = #{kgruppe,jdbcType=CHAR},
+      </if>
+      <if test="kehemali != null">
+        KEHEMALI = #{kehemali,jdbcType=CHAR},
+      </if>
+      <if test="ktyp != null">
+        KTYP = #{ktyp,jdbcType=CHAR},
+      </if>
+      <if test="kbrt != null">
+        KBRT = #{kbrt,jdbcType=DECIMAL},
+      </if>
+      <if test="kraddr1 != null">
+        KRADDR1 = #{kraddr1,jdbcType=CHAR},
+      </if>
+      <if test="kraddr2 != null">
+        KRADDR2 = #{kraddr2,jdbcType=CHAR},
+      </if>
+      <if test="kraddr3 != null">
+        KRADDR3 = #{kraddr3,jdbcType=CHAR},
+      </if>
+      <if test="kraddr4 != null">
+        KRADDR4 = #{kraddr4,jdbcType=CHAR},
+      </if>
+      <if test="kraddr5 != null">
+        KRADDR5 = #{kraddr5,jdbcType=CHAR},
+      </if>
+      <if test="kraddr6 != null">
+        KRADDR6 = #{kraddr6,jdbcType=CHAR},
+      </if>
+      <if test="kraddr7 != null">
+        KRADDR7 = #{kraddr7,jdbcType=CHAR},
+      </if>
+      <if test="ktel1 != null">
+        KTEL1 = #{ktel1,jdbcType=CHAR},
+      </if>
+      <if test="ktel2 != null">
+        KTEL2 = #{ktel2,jdbcType=CHAR},
+      </if>
+      <if test="ktlx != null">
+        KTLX = #{ktlx,jdbcType=CHAR},
+      </if>
+      <if test="kfax != null">
+        KFAX = #{kfax,jdbcType=CHAR},
+      </if>
+      <if test="kcopies != null">
+        KCOPIES = #{kcopies,jdbcType=DECIMAL},
+      </if>
+      <if test="kmwstpro != null">
+        KMWSTPRO = #{kmwstpro,jdbcType=CHAR},
+      </if>
+      <if test="kvat != null">
+        KVAT = #{kvat,jdbcType=CHAR},
+      </if>
+      <if test="kraba != null">
+        KRABA = #{kraba,jdbcType=DECIMAL},
+      </if>
+      <if test="kzahld != null">
+        KZAHLD = #{kzahld,jdbcType=CHAR},
+      </if>
+      <if test="kzahle != null">
+        KZAHLE = #{kzahle,jdbcType=CHAR},
+      </if>
+      <if test="ksprach != null">
+        KSPRACH = #{ksprach,jdbcType=CHAR},
+      </if>
+      <if test="krem1 != null">
+        KREM1 = #{krem1,jdbcType=CHAR},
+      </if>
+      <if test="krem2 != null">
+        KREM2 = #{krem2,jdbcType=CHAR},
+      </if>
+      <if test="krem3 != null">
+        KREM3 = #{krem3,jdbcType=CHAR},
+      </if>
+      <if test="krem4 != null">
+        KREM4 = #{krem4,jdbcType=CHAR},
+      </if>
+      <if test="krout1 != null">
+        KROUT1 = #{krout1,jdbcType=CHAR},
+      </if>
+      <if test="krout2 != null">
+        KROUT2 = #{krout2,jdbcType=CHAR},
+      </if>
+      <if test="krout3 != null">
+        KROUT3 = #{krout3,jdbcType=CHAR},
+      </if>
+      <if test="krout4 != null">
+        KROUT4 = #{krout4,jdbcType=CHAR},
+      </if>
+      <if test="kroutdat != null">
+        KROUTDAT = #{kroutdat,jdbcType=DATE},
+      </if>
+      <if test="kdatumls != null">
+        KDATUMLS = #{kdatumls,jdbcType=CHAR},
+      </if>
+      <if test="kaufschl != null">
+        KAUFSCHL = #{kaufschl,jdbcType=DECIMAL},
+      </if>
+      <if test="stamp != null">
+        STAMP = #{stamp,jdbcType=CHAR},
+      </if>
+      <if test="kbank != null">
+        KBANK = #{kbank,jdbcType=DECIMAL},
+      </if>
+      <if test="kredinr != null">
+        KREDINR = #{kredinr,jdbcType=CHAR},
+      </if>
+      <if test="ktage1 != null">
+        KTAGE1 = #{ktage1,jdbcType=DECIMAL},
+      </if>
+      <if test="kproz1 != null">
+        KPROZ1 = #{kproz1,jdbcType=CHAR},
+      </if>
+      <if test="ktage2 != null">
+        KTAGE2 = #{ktage2,jdbcType=DECIMAL},
+      </if>
+      <if test="kproz2 != null">
+        KPROZ2 = #{kproz2,jdbcType=CHAR},
+      </if>
+      <if test="kemail != null">
+        KEMAIL = #{kemail,jdbcType=CHAR},
+      </if>
+      <if test="fkKundencontact != null">
+        FK_KUNDENCONTACT = #{fkKundencontact,jdbcType=INTEGER},
+      </if>
+      <if test="rem != null">
+        REM = #{rem,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where PK_KUNDEN = #{pkKunden,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.com.casherp.entity.KundenDAO">
+    update kunden
+    set FK_LADDR = #{fkLaddr,jdbcType=INTEGER},
+      KKUNUM = #{kkunum,jdbcType=CHAR},
+      KDATUM = #{kdatum,jdbcType=DATE},
+      KSNAME = #{ksname,jdbcType=CHAR},
+      KWERBER = #{kwerber,jdbcType=CHAR},
+      KBETREU = #{kbetreu,jdbcType=CHAR},
+      KGRUPPE = #{kgruppe,jdbcType=CHAR},
+      KEHEMALI = #{kehemali,jdbcType=CHAR},
+      KTYP = #{ktyp,jdbcType=CHAR},
+      KBRT = #{kbrt,jdbcType=DECIMAL},
+      KRADDR1 = #{kraddr1,jdbcType=CHAR},
+      KRADDR2 = #{kraddr2,jdbcType=CHAR},
+      KRADDR3 = #{kraddr3,jdbcType=CHAR},
+      KRADDR4 = #{kraddr4,jdbcType=CHAR},
+      KRADDR5 = #{kraddr5,jdbcType=CHAR},
+      KRADDR6 = #{kraddr6,jdbcType=CHAR},
+      KRADDR7 = #{kraddr7,jdbcType=CHAR},
+      KTEL1 = #{ktel1,jdbcType=CHAR},
+      KTEL2 = #{ktel2,jdbcType=CHAR},
+      KTLX = #{ktlx,jdbcType=CHAR},
+      KFAX = #{kfax,jdbcType=CHAR},
+      KCOPIES = #{kcopies,jdbcType=DECIMAL},
+      KMWSTPRO = #{kmwstpro,jdbcType=CHAR},
+      KVAT = #{kvat,jdbcType=CHAR},
+      KRABA = #{kraba,jdbcType=DECIMAL},
+      KZAHLD = #{kzahld,jdbcType=CHAR},
+      KZAHLE = #{kzahle,jdbcType=CHAR},
+      KSPRACH = #{ksprach,jdbcType=CHAR},
+      KREM1 = #{krem1,jdbcType=CHAR},
+      KREM2 = #{krem2,jdbcType=CHAR},
+      KREM3 = #{krem3,jdbcType=CHAR},
+      KREM4 = #{krem4,jdbcType=CHAR},
+      KROUT1 = #{krout1,jdbcType=CHAR},
+      KROUT2 = #{krout2,jdbcType=CHAR},
+      KROUT3 = #{krout3,jdbcType=CHAR},
+      KROUT4 = #{krout4,jdbcType=CHAR},
+      KROUTDAT = #{kroutdat,jdbcType=DATE},
+      KDATUMLS = #{kdatumls,jdbcType=CHAR},
+      KAUFSCHL = #{kaufschl,jdbcType=DECIMAL},
+      STAMP = #{stamp,jdbcType=CHAR},
+      KBANK = #{kbank,jdbcType=DECIMAL},
+      KREDINR = #{kredinr,jdbcType=CHAR},
+      KTAGE1 = #{ktage1,jdbcType=DECIMAL},
+      KPROZ1 = #{kproz1,jdbcType=CHAR},
+      KTAGE2 = #{ktage2,jdbcType=DECIMAL},
+      KPROZ2 = #{kproz2,jdbcType=CHAR},
+      KEMAIL = #{kemail,jdbcType=CHAR},
+      FK_KUNDENCONTACT = #{fkKundencontact,jdbcType=INTEGER},
+      REM = #{rem,jdbcType=LONGVARCHAR}
+    where PK_KUNDEN = #{pkKunden,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.com.casherp.entity.KundenDAO">
+    update kunden
+    set FK_LADDR = #{fkLaddr,jdbcType=INTEGER},
+      KKUNUM = #{kkunum,jdbcType=CHAR},
+      KDATUM = #{kdatum,jdbcType=DATE},
+      KSNAME = #{ksname,jdbcType=CHAR},
+      KWERBER = #{kwerber,jdbcType=CHAR},
+      KBETREU = #{kbetreu,jdbcType=CHAR},
+      KGRUPPE = #{kgruppe,jdbcType=CHAR},
+      KEHEMALI = #{kehemali,jdbcType=CHAR},
+      KTYP = #{ktyp,jdbcType=CHAR},
+      KBRT = #{kbrt,jdbcType=DECIMAL},
+      KRADDR1 = #{kraddr1,jdbcType=CHAR},
+      KRADDR2 = #{kraddr2,jdbcType=CHAR},
+      KRADDR3 = #{kraddr3,jdbcType=CHAR},
+      KRADDR4 = #{kraddr4,jdbcType=CHAR},
+      KRADDR5 = #{kraddr5,jdbcType=CHAR},
+      KRADDR6 = #{kraddr6,jdbcType=CHAR},
+      KRADDR7 = #{kraddr7,jdbcType=CHAR},
+      KTEL1 = #{ktel1,jdbcType=CHAR},
+      KTEL2 = #{ktel2,jdbcType=CHAR},
+      KTLX = #{ktlx,jdbcType=CHAR},
+      KFAX = #{kfax,jdbcType=CHAR},
+      KCOPIES = #{kcopies,jdbcType=DECIMAL},
+      KMWSTPRO = #{kmwstpro,jdbcType=CHAR},
+      KVAT = #{kvat,jdbcType=CHAR},
+      KRABA = #{kraba,jdbcType=DECIMAL},
+      KZAHLD = #{kzahld,jdbcType=CHAR},
+      KZAHLE = #{kzahle,jdbcType=CHAR},
+      KSPRACH = #{ksprach,jdbcType=CHAR},
+      KREM1 = #{krem1,jdbcType=CHAR},
+      KREM2 = #{krem2,jdbcType=CHAR},
+      KREM3 = #{krem3,jdbcType=CHAR},
+      KREM4 = #{krem4,jdbcType=CHAR},
+      KROUT1 = #{krout1,jdbcType=CHAR},
+      KROUT2 = #{krout2,jdbcType=CHAR},
+      KROUT3 = #{krout3,jdbcType=CHAR},
+      KROUT4 = #{krout4,jdbcType=CHAR},
+      KROUTDAT = #{kroutdat,jdbcType=DATE},
+      KDATUMLS = #{kdatumls,jdbcType=CHAR},
+      KAUFSCHL = #{kaufschl,jdbcType=DECIMAL},
+      STAMP = #{stamp,jdbcType=CHAR},
+      KBANK = #{kbank,jdbcType=DECIMAL},
+      KREDINR = #{kredinr,jdbcType=CHAR},
+      KTAGE1 = #{ktage1,jdbcType=DECIMAL},
+      KPROZ1 = #{kproz1,jdbcType=CHAR},
+      KTAGE2 = #{ktage2,jdbcType=DECIMAL},
+      KPROZ2 = #{kproz2,jdbcType=CHAR},
+      KEMAIL = #{kemail,jdbcType=CHAR},
+      FK_KUNDENCONTACT = #{fkKundencontact,jdbcType=INTEGER}
+    where PK_KUNDEN = #{pkKunden,jdbcType=INTEGER}
+  </update>
+</mapper>

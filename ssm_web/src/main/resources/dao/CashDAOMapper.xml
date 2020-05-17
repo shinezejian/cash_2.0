@@ -1,0 +1,548 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cash.erp.dao.CashDAOMapper">
+  <resultMap id="BaseResultMap" type="com.com.casherp.entity.CashDAO">
+    <id column="PK_CASH" jdbcType="INTEGER" property="pkCash" />
+    <result column="AKURZ" jdbcType="CHAR" property="akurz" />
+    <result column="AUCH" jdbcType="CHAR" property="auch" />
+    <result column="PROD1" jdbcType="CHAR" property="prod1" />
+    <result column="PROD2" jdbcType="CHAR" property="prod2" />
+    <result column="ANSCHR1" jdbcType="CHAR" property="anschr1" />
+    <result column="ANSCHR2" jdbcType="CHAR" property="anschr2" />
+    <result column="ANSCHR3" jdbcType="CHAR" property="anschr3" />
+    <result column="STRASSE" jdbcType="CHAR" property="strasse" />
+    <result column="PLZORT" jdbcType="CHAR" property="plzort" />
+    <result column="ORTNR" jdbcType="CHAR" property="ortnr" />
+    <result column="LAND" jdbcType="CHAR" property="land" />
+    <result column="TEL1" jdbcType="CHAR" property="tel1" />
+    <result column="TLX" jdbcType="CHAR" property="tlx" />
+    <result column="FAX" jdbcType="CHAR" property="fax" />
+    <result column="EMAIL" jdbcType="CHAR" property="email" />
+    <result column="VERWEIS1" jdbcType="CHAR" property="verweis1" />
+    <result column="VERWEIS2" jdbcType="CHAR" property="verweis2" />
+    <result column="REM1" jdbcType="CHAR" property="rem1" />
+    <result column="REM2" jdbcType="CHAR" property="rem2" />
+    <result column="REM3" jdbcType="CHAR" property="rem3" />
+    <result column="REM4" jdbcType="CHAR" property="rem4" />
+    <result column="REM5" jdbcType="CHAR" property="rem5" />
+    <result column="REM6" jdbcType="CHAR" property="rem6" />
+    <result column="INSTITUT" jdbcType="CHAR" property="institut" />
+    <result column="BLZ" jdbcType="CHAR" property="blz" />
+    <result column="KONTO" jdbcType="CHAR" property="konto" />
+    <result column="VZWECK1" jdbcType="CHAR" property="vzweck1" />
+    <result column="VZWECK2" jdbcType="CHAR" property="vzweck2" />
+    <result column="SKPROZ1" jdbcType="CHAR" property="skproz1" />
+    <result column="SKTAGE1" jdbcType="DECIMAL" property="sktage1" />
+    <result column="SKPROZ2" jdbcType="CHAR" property="skproz2" />
+    <result column="SKTAGE2" jdbcType="DECIMAL" property="sktage2" />
+    <result column="SKGEN" jdbcType="CHAR" property="skgen" />
+    <result column="DEBINR" jdbcType="CHAR" property="debinr" />
+    <result column="VATNO" jdbcType="CHAR" property="vatno" />
+    <result column="ABANK" jdbcType="DECIMAL" property="abank" />
+    <result column="STAMP" jdbcType="CHAR" property="stamp" />
+    <result column="FK_CASHCONTACT" jdbcType="INTEGER" property="fkCashcontact" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.com.casherp.entity.CashDAO">
+    <result column="REM" jdbcType="LONGVARCHAR" property="rem" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    PK_CASH, AKURZ, AUCH, PROD1, PROD2, ANSCHR1, ANSCHR2, ANSCHR3, STRASSE, PLZORT, ORTNR, 
+    LAND, TEL1, TLX, FAX, EMAIL, VERWEIS1, VERWEIS2, REM1, REM2, REM3, REM4, REM5, REM6, 
+    INSTITUT, BLZ, KONTO, VZWECK1, VZWECK2, SKPROZ1, SKTAGE1, SKPROZ2, SKTAGE2, SKGEN, 
+    DEBINR, VATNO, ABANK, STAMP, FK_CASHCONTACT
+  </sql>
+  <sql id="Blob_Column_List">
+    REM
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from cash
+    where PK_CASH = #{pkCash,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from cash
+    where PK_CASH = #{pkCash,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.com.casherp.entity.CashDAO">
+    insert into cash (PK_CASH, AKURZ, AUCH, 
+      PROD1, PROD2, ANSCHR1, ANSCHR2, 
+      ANSCHR3, STRASSE, PLZORT, ORTNR, 
+      LAND, TEL1, TLX, FAX, 
+      EMAIL, VERWEIS1, VERWEIS2, REM1, 
+      REM2, REM3, REM4, REM5, 
+      REM6, INSTITUT, BLZ, KONTO, 
+      VZWECK1, VZWECK2, SKPROZ1, SKTAGE1, 
+      SKPROZ2, SKTAGE2, SKGEN, 
+      DEBINR, VATNO, ABANK, STAMP, 
+      FK_CASHCONTACT, REM)
+    values (#{pkCash,jdbcType=INTEGER}, #{akurz,jdbcType=CHAR}, #{auch,jdbcType=CHAR}, 
+      #{prod1,jdbcType=CHAR}, #{prod2,jdbcType=CHAR}, #{anschr1,jdbcType=CHAR}, #{anschr2,jdbcType=CHAR}, 
+      #{anschr3,jdbcType=CHAR}, #{strasse,jdbcType=CHAR}, #{plzort,jdbcType=CHAR}, #{ortnr,jdbcType=CHAR}, 
+      #{land,jdbcType=CHAR}, #{tel1,jdbcType=CHAR}, #{tlx,jdbcType=CHAR}, #{fax,jdbcType=CHAR}, 
+      #{email,jdbcType=CHAR}, #{verweis1,jdbcType=CHAR}, #{verweis2,jdbcType=CHAR}, #{rem1,jdbcType=CHAR}, 
+      #{rem2,jdbcType=CHAR}, #{rem3,jdbcType=CHAR}, #{rem4,jdbcType=CHAR}, #{rem5,jdbcType=CHAR}, 
+      #{rem6,jdbcType=CHAR}, #{institut,jdbcType=CHAR}, #{blz,jdbcType=CHAR}, #{konto,jdbcType=CHAR}, 
+      #{vzweck1,jdbcType=CHAR}, #{vzweck2,jdbcType=CHAR}, #{skproz1,jdbcType=CHAR}, #{sktage1,jdbcType=DECIMAL}, 
+      #{skproz2,jdbcType=CHAR}, #{sktage2,jdbcType=DECIMAL}, #{skgen,jdbcType=CHAR}, 
+      #{debinr,jdbcType=CHAR}, #{vatno,jdbcType=CHAR}, #{abank,jdbcType=DECIMAL}, #{stamp,jdbcType=CHAR}, 
+      #{fkCashcontact,jdbcType=INTEGER}, #{rem,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.com.casherp.entity.CashDAO">
+    insert into cash
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="pkCash != null">
+        PK_CASH,
+      </if>
+      <if test="akurz != null">
+        AKURZ,
+      </if>
+      <if test="auch != null">
+        AUCH,
+      </if>
+      <if test="prod1 != null">
+        PROD1,
+      </if>
+      <if test="prod2 != null">
+        PROD2,
+      </if>
+      <if test="anschr1 != null">
+        ANSCHR1,
+      </if>
+      <if test="anschr2 != null">
+        ANSCHR2,
+      </if>
+      <if test="anschr3 != null">
+        ANSCHR3,
+      </if>
+      <if test="strasse != null">
+        STRASSE,
+      </if>
+      <if test="plzort != null">
+        PLZORT,
+      </if>
+      <if test="ortnr != null">
+        ORTNR,
+      </if>
+      <if test="land != null">
+        LAND,
+      </if>
+      <if test="tel1 != null">
+        TEL1,
+      </if>
+      <if test="tlx != null">
+        TLX,
+      </if>
+      <if test="fax != null">
+        FAX,
+      </if>
+      <if test="email != null">
+        EMAIL,
+      </if>
+      <if test="verweis1 != null">
+        VERWEIS1,
+      </if>
+      <if test="verweis2 != null">
+        VERWEIS2,
+      </if>
+      <if test="rem1 != null">
+        REM1,
+      </if>
+      <if test="rem2 != null">
+        REM2,
+      </if>
+      <if test="rem3 != null">
+        REM3,
+      </if>
+      <if test="rem4 != null">
+        REM4,
+      </if>
+      <if test="rem5 != null">
+        REM5,
+      </if>
+      <if test="rem6 != null">
+        REM6,
+      </if>
+      <if test="institut != null">
+        INSTITUT,
+      </if>
+      <if test="blz != null">
+        BLZ,
+      </if>
+      <if test="konto != null">
+        KONTO,
+      </if>
+      <if test="vzweck1 != null">
+        VZWECK1,
+      </if>
+      <if test="vzweck2 != null">
+        VZWECK2,
+      </if>
+      <if test="skproz1 != null">
+        SKPROZ1,
+      </if>
+      <if test="sktage1 != null">
+        SKTAGE1,
+      </if>
+      <if test="skproz2 != null">
+        SKPROZ2,
+      </if>
+      <if test="sktage2 != null">
+        SKTAGE2,
+      </if>
+      <if test="skgen != null">
+        SKGEN,
+      </if>
+      <if test="debinr != null">
+        DEBINR,
+      </if>
+      <if test="vatno != null">
+        VATNO,
+      </if>
+      <if test="abank != null">
+        ABANK,
+      </if>
+      <if test="stamp != null">
+        STAMP,
+      </if>
+      <if test="fkCashcontact != null">
+        FK_CASHCONTACT,
+      </if>
+      <if test="rem != null">
+        REM,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="pkCash != null">
+        #{pkCash,jdbcType=INTEGER},
+      </if>
+      <if test="akurz != null">
+        #{akurz,jdbcType=CHAR},
+      </if>
+      <if test="auch != null">
+        #{auch,jdbcType=CHAR},
+      </if>
+      <if test="prod1 != null">
+        #{prod1,jdbcType=CHAR},
+      </if>
+      <if test="prod2 != null">
+        #{prod2,jdbcType=CHAR},
+      </if>
+      <if test="anschr1 != null">
+        #{anschr1,jdbcType=CHAR},
+      </if>
+      <if test="anschr2 != null">
+        #{anschr2,jdbcType=CHAR},
+      </if>
+      <if test="anschr3 != null">
+        #{anschr3,jdbcType=CHAR},
+      </if>
+      <if test="strasse != null">
+        #{strasse,jdbcType=CHAR},
+      </if>
+      <if test="plzort != null">
+        #{plzort,jdbcType=CHAR},
+      </if>
+      <if test="ortnr != null">
+        #{ortnr,jdbcType=CHAR},
+      </if>
+      <if test="land != null">
+        #{land,jdbcType=CHAR},
+      </if>
+      <if test="tel1 != null">
+        #{tel1,jdbcType=CHAR},
+      </if>
+      <if test="tlx != null">
+        #{tlx,jdbcType=CHAR},
+      </if>
+      <if test="fax != null">
+        #{fax,jdbcType=CHAR},
+      </if>
+      <if test="email != null">
+        #{email,jdbcType=CHAR},
+      </if>
+      <if test="verweis1 != null">
+        #{verweis1,jdbcType=CHAR},
+      </if>
+      <if test="verweis2 != null">
+        #{verweis2,jdbcType=CHAR},
+      </if>
+      <if test="rem1 != null">
+        #{rem1,jdbcType=CHAR},
+      </if>
+      <if test="rem2 != null">
+        #{rem2,jdbcType=CHAR},
+      </if>
+      <if test="rem3 != null">
+        #{rem3,jdbcType=CHAR},
+      </if>
+      <if test="rem4 != null">
+        #{rem4,jdbcType=CHAR},
+      </if>
+      <if test="rem5 != null">
+        #{rem5,jdbcType=CHAR},
+      </if>
+      <if test="rem6 != null">
+        #{rem6,jdbcType=CHAR},
+      </if>
+      <if test="institut != null">
+        #{institut,jdbcType=CHAR},
+      </if>
+      <if test="blz != null">
+        #{blz,jdbcType=CHAR},
+      </if>
+      <if test="konto != null">
+        #{konto,jdbcType=CHAR},
+      </if>
+      <if test="vzweck1 != null">
+        #{vzweck1,jdbcType=CHAR},
+      </if>
+      <if test="vzweck2 != null">
+        #{vzweck2,jdbcType=CHAR},
+      </if>
+      <if test="skproz1 != null">
+        #{skproz1,jdbcType=CHAR},
+      </if>
+      <if test="sktage1 != null">
+        #{sktage1,jdbcType=DECIMAL},
+      </if>
+      <if test="skproz2 != null">
+        #{skproz2,jdbcType=CHAR},
+      </if>
+      <if test="sktage2 != null">
+        #{sktage2,jdbcType=DECIMAL},
+      </if>
+      <if test="skgen != null">
+        #{skgen,jdbcType=CHAR},
+      </if>
+      <if test="debinr != null">
+        #{debinr,jdbcType=CHAR},
+      </if>
+      <if test="vatno != null">
+        #{vatno,jdbcType=CHAR},
+      </if>
+      <if test="abank != null">
+        #{abank,jdbcType=DECIMAL},
+      </if>
+      <if test="stamp != null">
+        #{stamp,jdbcType=CHAR},
+      </if>
+      <if test="fkCashcontact != null">
+        #{fkCashcontact,jdbcType=INTEGER},
+      </if>
+      <if test="rem != null">
+        #{rem,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.com.casherp.entity.CashDAO">
+    update cash
+    <set>
+      <if test="akurz != null">
+        AKURZ = #{akurz,jdbcType=CHAR},
+      </if>
+      <if test="auch != null">
+        AUCH = #{auch,jdbcType=CHAR},
+      </if>
+      <if test="prod1 != null">
+        PROD1 = #{prod1,jdbcType=CHAR},
+      </if>
+      <if test="prod2 != null">
+        PROD2 = #{prod2,jdbcType=CHAR},
+      </if>
+      <if test="anschr1 != null">
+        ANSCHR1 = #{anschr1,jdbcType=CHAR},
+      </if>
+      <if test="anschr2 != null">
+        ANSCHR2 = #{anschr2,jdbcType=CHAR},
+      </if>
+      <if test="anschr3 != null">
+        ANSCHR3 = #{anschr3,jdbcType=CHAR},
+      </if>
+      <if test="strasse != null">
+        STRASSE = #{strasse,jdbcType=CHAR},
+      </if>
+      <if test="plzort != null">
+        PLZORT = #{plzort,jdbcType=CHAR},
+      </if>
+      <if test="ortnr != null">
+        ORTNR = #{ortnr,jdbcType=CHAR},
+      </if>
+      <if test="land != null">
+        LAND = #{land,jdbcType=CHAR},
+      </if>
+      <if test="tel1 != null">
+        TEL1 = #{tel1,jdbcType=CHAR},
+      </if>
+      <if test="tlx != null">
+        TLX = #{tlx,jdbcType=CHAR},
+      </if>
+      <if test="fax != null">
+        FAX = #{fax,jdbcType=CHAR},
+      </if>
+      <if test="email != null">
+        EMAIL = #{email,jdbcType=CHAR},
+      </if>
+      <if test="verweis1 != null">
+        VERWEIS1 = #{verweis1,jdbcType=CHAR},
+      </if>
+      <if test="verweis2 != null">
+        VERWEIS2 = #{verweis2,jdbcType=CHAR},
+      </if>
+      <if test="rem1 != null">
+        REM1 = #{rem1,jdbcType=CHAR},
+      </if>
+      <if test="rem2 != null">
+        REM2 = #{rem2,jdbcType=CHAR},
+      </if>
+      <if test="rem3 != null">
+        REM3 = #{rem3,jdbcType=CHAR},
+      </if>
+      <if test="rem4 != null">
+        REM4 = #{rem4,jdbcType=CHAR},
+      </if>
+      <if test="rem5 != null">
+        REM5 = #{rem5,jdbcType=CHAR},
+      </if>
+      <if test="rem6 != null">
+        REM6 = #{rem6,jdbcType=CHAR},
+      </if>
+      <if test="institut != null">
+        INSTITUT = #{institut,jdbcType=CHAR},
+      </if>
+      <if test="blz != null">
+        BLZ = #{blz,jdbcType=CHAR},
+      </if>
+      <if test="konto != null">
+        KONTO = #{konto,jdbcType=CHAR},
+      </if>
+      <if test="vzweck1 != null">
+        VZWECK1 = #{vzweck1,jdbcType=CHAR},
+      </if>
+      <if test="vzweck2 != null">
+        VZWECK2 = #{vzweck2,jdbcType=CHAR},
+      </if>
+      <if test="skproz1 != null">
+        SKPROZ1 = #{skproz1,jdbcType=CHAR},
+      </if>
+      <if test="sktage1 != null">
+        SKTAGE1 = #{sktage1,jdbcType=DECIMAL},
+      </if>
+      <if test="skproz2 != null">
+        SKPROZ2 = #{skproz2,jdbcType=CHAR},
+      </if>
+      <if test="sktage2 != null">
+        SKTAGE2 = #{sktage2,jdbcType=DECIMAL},
+      </if>
+      <if test="skgen != null">
+        SKGEN = #{skgen,jdbcType=CHAR},
+      </if>
+      <if test="debinr != null">
+        DEBINR = #{debinr,jdbcType=CHAR},
+      </if>
+      <if test="vatno != null">
+        VATNO = #{vatno,jdbcType=CHAR},
+      </if>
+      <if test="abank != null">
+        ABANK = #{abank,jdbcType=DECIMAL},
+      </if>
+      <if test="stamp != null">
+        STAMP = #{stamp,jdbcType=CHAR},
+      </if>
+      <if test="fkCashcontact != null">
+        FK_CASHCONTACT = #{fkCashcontact,jdbcType=INTEGER},
+      </if>
+      <if test="rem != null">
+        REM = #{rem,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where PK_CASH = #{pkCash,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.com.casherp.entity.CashDAO">
+    update cash
+    set AKURZ = #{akurz,jdbcType=CHAR},
+      AUCH = #{auch,jdbcType=CHAR},
+      PROD1 = #{prod1,jdbcType=CHAR},
+      PROD2 = #{prod2,jdbcType=CHAR},
+      ANSCHR1 = #{anschr1,jdbcType=CHAR},
+      ANSCHR2 = #{anschr2,jdbcType=CHAR},
+      ANSCHR3 = #{anschr3,jdbcType=CHAR},
+      STRASSE = #{strasse,jdbcType=CHAR},
+      PLZORT = #{plzort,jdbcType=CHAR},
+      ORTNR = #{ortnr,jdbcType=CHAR},
+      LAND = #{land,jdbcType=CHAR},
+      TEL1 = #{tel1,jdbcType=CHAR},
+      TLX = #{tlx,jdbcType=CHAR},
+      FAX = #{fax,jdbcType=CHAR},
+      EMAIL = #{email,jdbcType=CHAR},
+      VERWEIS1 = #{verweis1,jdbcType=CHAR},
+      VERWEIS2 = #{verweis2,jdbcType=CHAR},
+      REM1 = #{rem1,jdbcType=CHAR},
+      REM2 = #{rem2,jdbcType=CHAR},
+      REM3 = #{rem3,jdbcType=CHAR},
+      REM4 = #{rem4,jdbcType=CHAR},
+      REM5 = #{rem5,jdbcType=CHAR},
+      REM6 = #{rem6,jdbcType=CHAR},
+      INSTITUT = #{institut,jdbcType=CHAR},
+      BLZ = #{blz,jdbcType=CHAR},
+      KONTO = #{konto,jdbcType=CHAR},
+      VZWECK1 = #{vzweck1,jdbcType=CHAR},
+      VZWECK2 = #{vzweck2,jdbcType=CHAR},
+      SKPROZ1 = #{skproz1,jdbcType=CHAR},
+      SKTAGE1 = #{sktage1,jdbcType=DECIMAL},
+      SKPROZ2 = #{skproz2,jdbcType=CHAR},
+      SKTAGE2 = #{sktage2,jdbcType=DECIMAL},
+      SKGEN = #{skgen,jdbcType=CHAR},
+      DEBINR = #{debinr,jdbcType=CHAR},
+      VATNO = #{vatno,jdbcType=CHAR},
+      ABANK = #{abank,jdbcType=DECIMAL},
+      STAMP = #{stamp,jdbcType=CHAR},
+      FK_CASHCONTACT = #{fkCashcontact,jdbcType=INTEGER},
+      REM = #{rem,jdbcType=LONGVARCHAR}
+    where PK_CASH = #{pkCash,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.com.casherp.entity.CashDAO">
+    update cash
+    set AKURZ = #{akurz,jdbcType=CHAR},
+      AUCH = #{auch,jdbcType=CHAR},
+      PROD1 = #{prod1,jdbcType=CHAR},
+      PROD2 = #{prod2,jdbcType=CHAR},
+      ANSCHR1 = #{anschr1,jdbcType=CHAR},
+      ANSCHR2 = #{anschr2,jdbcType=CHAR},
+      ANSCHR3 = #{anschr3,jdbcType=CHAR},
+      STRASSE = #{strasse,jdbcType=CHAR},
+      PLZORT = #{plzort,jdbcType=CHAR},
+      ORTNR = #{ortnr,jdbcType=CHAR},
+      LAND = #{land,jdbcType=CHAR},
+      TEL1 = #{tel1,jdbcType=CHAR},
+      TLX = #{tlx,jdbcType=CHAR},
+      FAX = #{fax,jdbcType=CHAR},
+      EMAIL = #{email,jdbcType=CHAR},
+      VERWEIS1 = #{verweis1,jdbcType=CHAR},
+      VERWEIS2 = #{verweis2,jdbcType=CHAR},
+      REM1 = #{rem1,jdbcType=CHAR},
+      REM2 = #{rem2,jdbcType=CHAR},
+      REM3 = #{rem3,jdbcType=CHAR},
+      REM4 = #{rem4,jdbcType=CHAR},
+      REM5 = #{rem5,jdbcType=CHAR},
+      REM6 = #{rem6,jdbcType=CHAR},
+      INSTITUT = #{institut,jdbcType=CHAR},
+      BLZ = #{blz,jdbcType=CHAR},
+      KONTO = #{konto,jdbcType=CHAR},
+      VZWECK1 = #{vzweck1,jdbcType=CHAR},
+      VZWECK2 = #{vzweck2,jdbcType=CHAR},
+      SKPROZ1 = #{skproz1,jdbcType=CHAR},
+      SKTAGE1 = #{sktage1,jdbcType=DECIMAL},
+      SKPROZ2 = #{skproz2,jdbcType=CHAR},
+      SKTAGE2 = #{sktage2,jdbcType=DECIMAL},
+      SKGEN = #{skgen,jdbcType=CHAR},
+      DEBINR = #{debinr,jdbcType=CHAR},
+      VATNO = #{vatno,jdbcType=CHAR},
+      ABANK = #{abank,jdbcType=DECIMAL},
+      STAMP = #{stamp,jdbcType=CHAR},
+      FK_CASHCONTACT = #{fkCashcontact,jdbcType=INTEGER}
+    where PK_CASH = #{pkCash,jdbcType=INTEGER}
+  </update>
+</mapper>

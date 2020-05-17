@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cash.erp.dao.PosDAOMapper">
+  <resultMap id="BaseResultMap" type="com.com.casherp.entity.PosDAO">
+    <result column="PK_POS" jdbcType="INTEGER" property="pkPos" />
+    <result column="FK_AUFTRAG" jdbcType="INTEGER" property="fkAuftrag" />
+    <result column="LAUS" jdbcType="DECIMAL" property="laus" />
+    <result column="PAUFNO" jdbcType="CHAR" property="paufno" />
+    <result column="PPOSNO" jdbcType="CHAR" property="pposno" />
+    <result column="PMENGE" jdbcType="CHAR" property="pmenge" />
+    <result column="PUNIT" jdbcType="CHAR" property="punit" />
+    <result column="PART1" jdbcType="CHAR" property="part1" />
+    <result column="PART2" jdbcType="CHAR" property="part2" />
+    <result column="PART3" jdbcType="CHAR" property="part3" />
+    <result column="PART4" jdbcType="CHAR" property="part4" />
+    <result column="PTECH" jdbcType="CHAR" property="ptech" />
+    <result column="PDELTIME" jdbcType="CHAR" property="pdeltime" />
+    <result column="PVK" jdbcType="DECIMAL" property="pvk" />
+    <result column="PVPER" jdbcType="DECIMAL" property="pvper" />
+    <result column="PVWAE" jdbcType="CHAR" property="pvwae" />
+    <result column="PVEURFAK" jdbcType="DECIMAL" property="pveurfak" />
+    <result column="PVEUR" jdbcType="DECIMAL" property="pveur" />
+    <result column="PEK" jdbcType="DECIMAL" property="pek" />
+    <result column="PEPER" jdbcType="DECIMAL" property="peper" />
+    <result column="PEWAE" jdbcType="CHAR" property="pewae" />
+    <result column="PEEURFAK" jdbcType="DECIMAL" property="peeurfak" />
+    <result column="PEEUR" jdbcType="DECIMAL" property="peeur" />
+    <result column="PLIEF" jdbcType="CHAR" property="plief" />
+    <result column="PSTATUS" jdbcType="CHAR" property="pstatus" />
+    <result column="PSPEC" jdbcType="CHAR" property="pspec" />
+    <result column="PDEP" jdbcType="CHAR" property="pdep" />
+    <result column="PANAB" jdbcType="CHAR" property="panab" />
+    <result column="PHUNU" jdbcType="CHAR" property="phunu" />
+    <result column="PLTERMIN" jdbcType="DATE" property="pltermin" />
+    <result column="PATYP" jdbcType="CHAR" property="patyp" />
+    <result column="PREM" jdbcType="CHAR" property="prem" />
+    <result column="STAMP" jdbcType="CHAR" property="stamp" />
+  </resultMap>
+  <insert id="insert" parameterType="com.com.casherp.entity.PosDAO">
+    insert into pos (PK_POS, FK_AUFTRAG, LAUS, 
+      PAUFNO, PPOSNO, PMENGE, PUNIT, 
+      PART1, PART2, PART3, PART4, 
+      PTECH, PDELTIME, PVK, PVPER, 
+      PVWAE, PVEURFAK, PVEUR, 
+      PEK, PEPER, PEWAE, PEEURFAK, 
+      PEEUR, PLIEF, PSTATUS, PSPEC, 
+      PDEP, PANAB, PHUNU, PLTERMIN, 
+      PATYP, PREM, STAMP)
+    values (#{pkPos,jdbcType=INTEGER}, #{fkAuftrag,jdbcType=INTEGER}, #{laus,jdbcType=DECIMAL}, 
+      #{paufno,jdbcType=CHAR}, #{pposno,jdbcType=CHAR}, #{pmenge,jdbcType=CHAR}, #{punit,jdbcType=CHAR}, 
+      #{part1,jdbcType=CHAR}, #{part2,jdbcType=CHAR}, #{part3,jdbcType=CHAR}, #{part4,jdbcType=CHAR}, 
+      #{ptech,jdbcType=CHAR}, #{pdeltime,jdbcType=CHAR}, #{pvk,jdbcType=DECIMAL}, #{pvper,jdbcType=DECIMAL}, 
+      #{pvwae,jdbcType=CHAR}, #{pveurfak,jdbcType=DECIMAL}, #{pveur,jdbcType=DECIMAL}, 
+      #{pek,jdbcType=DECIMAL}, #{peper,jdbcType=DECIMAL}, #{pewae,jdbcType=CHAR}, #{peeurfak,jdbcType=DECIMAL}, 
+      #{peeur,jdbcType=DECIMAL}, #{plief,jdbcType=CHAR}, #{pstatus,jdbcType=CHAR}, #{pspec,jdbcType=CHAR}, 
+      #{pdep,jdbcType=CHAR}, #{panab,jdbcType=CHAR}, #{phunu,jdbcType=CHAR}, #{pltermin,jdbcType=DATE}, 
+      #{patyp,jdbcType=CHAR}, #{prem,jdbcType=CHAR}, #{stamp,jdbcType=CHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.com.casherp.entity.PosDAO">
+    insert into pos
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="pkPos != null">
+        PK_POS,
+      </if>
+      <if test="fkAuftrag != null">
+        FK_AUFTRAG,
+      </if>
+      <if test="laus != null">
+        LAUS,
+      </if>
+      <if test="paufno != null">
+        PAUFNO,
+      </if>
+      <if test="pposno != null">
+        PPOSNO,
+      </if>
+      <if test="pmenge != null">
+        PMENGE,
+      </if>
+      <if test="punit != null">
+        PUNIT,
+      </if>
+      <if test="part1 != null">
+        PART1,
+      </if>
+      <if test="part2 != null">
+        PART2,
+      </if>
+      <if test="part3 != null">
+        PART3,
+      </if>
+      <if test="part4 != null">
+        PART4,
+      </if>
+      <if test="ptech != null">
+        PTECH,
+      </if>
+      <if test="pdeltime != null">
+        PDELTIME,
+      </if>
+      <if test="pvk != null">
+        PVK,
+      </if>
+      <if test="pvper != null">
+        PVPER,
+      </if>
+      <if test="pvwae != null">
+        PVWAE,
+      </if>
+      <if test="pveurfak != null">
+        PVEURFAK,
+      </if>
+      <if test="pveur != null">
+        PVEUR,
+      </if>
+      <if test="pek != null">
+        PEK,
+      </if>
+      <if test="peper != null">
+        PEPER,
+      </if>
+      <if test="pewae != null">
+        PEWAE,
+      </if>
+      <if test="peeurfak != null">
+        PEEURFAK,
+      </if>
+      <if test="peeur != null">
+        PEEUR,
+      </if>
+      <if test="plief != null">
+        PLIEF,
+      </if>
+      <if test="pstatus != null">
+        PSTATUS,
+      </if>
+      <if test="pspec != null">
+        PSPEC,
+      </if>
+      <if test="pdep != null">
+        PDEP,
+      </if>
+      <if test="panab != null">
+        PANAB,
+      </if>
+      <if test="phunu != null">
+        PHUNU,
+      </if>
+      <if test="pltermin != null">
+        PLTERMIN,
+      </if>
+      <if test="patyp != null">
+        PATYP,
+      </if>
+      <if test="prem != null">
+        PREM,
+      </if>
+      <if test="stamp != null">
+        STAMP,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="pkPos != null">
+        #{pkPos,jdbcType=INTEGER},
+      </if>
+      <if test="fkAuftrag != null">
+        #{fkAuftrag,jdbcType=INTEGER},
+      </if>
+      <if test="laus != null">
+        #{laus,jdbcType=DECIMAL},
+      </if>
+      <if test="paufno != null">
+        #{paufno,jdbcType=CHAR},
+      </if>
+      <if test="pposno != null">
+        #{pposno,jdbcType=CHAR},
+      </if>
+      <if test="pmenge != null">
+        #{pmenge,jdbcType=CHAR},
+      </if>
+      <if test="punit != null">
+        #{punit,jdbcType=CHAR},
+      </if>
+      <if test="part1 != null">
+        #{part1,jdbcType=CHAR},
+      </if>
+      <if test="part2 != null">
+        #{part2,jdbcType=CHAR},
+      </if>
+      <if test="part3 != null">
+        #{part3,jdbcType=CHAR},
+      </if>
+      <if test="part4 != null">
+        #{part4,jdbcType=CHAR},
+      </if>
+      <if test="ptech != null">
+        #{ptech,jdbcType=CHAR},
+      </if>
+      <if test="pdeltime != null">
+        #{pdeltime,jdbcType=CHAR},
+      </if>
+      <if test="pvk != null">
+        #{pvk,jdbcType=DECIMAL},
+      </if>
+      <if test="pvper != null">
+        #{pvper,jdbcType=DECIMAL},
+      </if>
+      <if test="pvwae != null">
+        #{pvwae,jdbcType=CHAR},
+      </if>
+      <if test="pveurfak != null">
+        #{pveurfak,jdbcType=DECIMAL},
+      </if>
+      <if test="pveur != null">
+        #{pveur,jdbcType=DECIMAL},
+      </if>
+      <if test="pek != null">
+        #{pek,jdbcType=DECIMAL},
+      </if>
+      <if test="peper != null">
+        #{peper,jdbcType=DECIMAL},
+      </if>
+      <if test="pewae != null">
+        #{pewae,jdbcType=CHAR},
+      </if>
+      <if test="peeurfak != null">
+        #{peeurfak,jdbcType=DECIMAL},
+      </if>
+      <if test="peeur != null">
+        #{peeur,jdbcType=DECIMAL},
+      </if>
+      <if test="plief != null">
+        #{plief,jdbcType=CHAR},
+      </if>
+      <if test="pstatus != null">
+        #{pstatus,jdbcType=CHAR},
+      </if>
+      <if test="pspec != null">
+        #{pspec,jdbcType=CHAR},
+      </if>
+      <if test="pdep != null">
+        #{pdep,jdbcType=CHAR},
+      </if>
+      <if test="panab != null">
+        #{panab,jdbcType=CHAR},
+      </if>
+      <if test="phunu != null">
+        #{phunu,jdbcType=CHAR},
+      </if>
+      <if test="pltermin != null">
+        #{pltermin,jdbcType=DATE},
+      </if>
+      <if test="patyp != null">
+        #{patyp,jdbcType=CHAR},
+      </if>
+      <if test="prem != null">
+        #{prem,jdbcType=CHAR},
+      </if>
+      <if test="stamp != null">
+        #{stamp,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

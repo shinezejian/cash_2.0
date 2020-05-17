@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cash.erp.dao.AuftragDAOMapper">
+  <resultMap id="BaseResultMap" type="com.com.casherp.entity.AuftragDAO">
+    <result column="PK_AUFTRAG" jdbcType="INTEGER" property="pkAuftrag" />
+    <result column="FK_KUNDEN" jdbcType="INTEGER" property="fkKunden" />
+    <result column="FK_LADDR" jdbcType="INTEGER" property="fkLaddr" />
+    <result column="AAUFNO" jdbcType="CHAR" property="aaufno" />
+    <result column="AKUKURZ" jdbcType="CHAR" property="akukurz" />
+    <result column="ATYP" jdbcType="CHAR" property="atyp" />
+    <result column="ADATANL" jdbcType="DATE" property="adatanl" />
+    <result column="ADATACTI" jdbcType="DATE" property="adatacti" />
+    <result column="AREFKND" jdbcType="CHAR" property="arefknd" />
+    <result column="AWERBER" jdbcType="CHAR" property="awerber" />
+    <result column="ABETREUR" jdbcType="CHAR" property="abetreur" />
+    <result column="AGRUPPE" jdbcType="CHAR" property="agruppe" />
+    <result column="AABWICKL" jdbcType="CHAR" property="aabwickl" />
+    <result column="APACKSEI" jdbcType="DECIMAL" property="apacksei" />
+    <result column="ALIEFSEI" jdbcType="DECIMAL" property="aliefsei" />
+    <result column="AWAEHRVK" jdbcType="CHAR" property="awaehrvk" />
+    <result column="AWAEHREK" jdbcType="CHAR" property="awaehrek" />
+    <result column="AHU1" jdbcType="CHAR" property="ahu1" />
+    <result column="AHU2" jdbcType="CHAR" property="ahu2" />
+    <result column="AHU3" jdbcType="CHAR" property="ahu3" />
+    <result column="AHU4" jdbcType="CHAR" property="ahu4" />
+    <result column="AHU5" jdbcType="CHAR" property="ahu5" />
+    <result column="AHU6" jdbcType="CHAR" property="ahu6" />
+    <result column="AHU7" jdbcType="CHAR" property="ahu7" />
+    <result column="AHU8" jdbcType="CHAR" property="ahu8" />
+    <result column="AHU9" jdbcType="CHAR" property="ahu9" />
+    <result column="ANU11" jdbcType="CHAR" property="anu11" />
+    <result column="ANU12" jdbcType="CHAR" property="anu12" />
+    <result column="ANU21" jdbcType="CHAR" property="anu21" />
+    <result column="ANU22" jdbcType="CHAR" property="anu22" />
+    <result column="ANU31" jdbcType="CHAR" property="anu31" />
+    <result column="ANU32" jdbcType="CHAR" property="anu32" />
+    <result column="ANU41" jdbcType="CHAR" property="anu41" />
+    <result column="ANU42" jdbcType="CHAR" property="anu42" />
+    <result column="ANU51" jdbcType="CHAR" property="anu51" />
+    <result column="ANU52" jdbcType="CHAR" property="anu52" />
+    <result column="ANU61" jdbcType="CHAR" property="anu61" />
+    <result column="ANU62" jdbcType="CHAR" property="anu62" />
+    <result column="ANU71" jdbcType="CHAR" property="anu71" />
+    <result column="ANU72" jdbcType="CHAR" property="anu72" />
+    <result column="ANU81" jdbcType="CHAR" property="anu81" />
+    <result column="ANU82" jdbcType="CHAR" property="anu82" />
+    <result column="ANU91" jdbcType="CHAR" property="anu91" />
+    <result column="ANU92" jdbcType="CHAR" property="anu92" />
+    <result column="ALIEFDAT" jdbcType="DATE" property="aliefdat" />
+    <result column="ARNGDAT" jdbcType="DATE" property="arngdat" />
+    <result column="ALIEFNR" jdbcType="CHAR" property="aliefnr" />
+    <result column="ARNGNR" jdbcType="CHAR" property="arngnr" />
+    <result column="AREM1" jdbcType="CHAR" property="arem1" />
+    <result column="AREM2" jdbcType="CHAR" property="arem2" />
+    <result column="AREM3" jdbcType="CHAR" property="arem3" />
+    <result column="AREM4" jdbcType="CHAR" property="arem4" />
+    <result column="AREM5" jdbcType="CHAR" property="arem5" />
+    <result column="AOWNER" jdbcType="CHAR" property="aowner" />
+    <result column="AAUFSCHLAG" jdbcType="DECIMAL" property="aaufschlag" />
+    <result column="STAMP" jdbcType="CHAR" property="stamp" />
+  </resultMap>
+  <insert id="insert" parameterType="com.com.casherp.entity.AuftragDAO">
+    insert into auftrag (PK_AUFTRAG, FK_KUNDEN, FK_LADDR, 
+      AAUFNO, AKUKURZ, ATYP, ADATANL, 
+      ADATACTI, AREFKND, AWERBER, 
+      ABETREUR, AGRUPPE, AABWICKL, 
+      APACKSEI, ALIEFSEI, AWAEHRVK, 
+      AWAEHREK, AHU1, AHU2, AHU3, 
+      AHU4, AHU5, AHU6, AHU7, 
+      AHU8, AHU9, ANU11, ANU12, 
+      ANU21, ANU22, ANU31, ANU32, 
+      ANU41, ANU42, ANU51, ANU52, 
+      ANU61, ANU62, ANU71, ANU72, 
+      ANU81, ANU82, ANU91, ANU92, 
+      ALIEFDAT, ARNGDAT, ALIEFNR, 
+      ARNGNR, AREM1, AREM2, AREM3, 
+      AREM4, AREM5, AOWNER, AAUFSCHLAG, 
+      STAMP)
+    values (#{pkAuftrag,jdbcType=INTEGER}, #{fkKunden,jdbcType=INTEGER}, #{fkLaddr,jdbcType=INTEGER}, 
+      #{aaufno,jdbcType=CHAR}, #{akukurz,jdbcType=CHAR}, #{atyp,jdbcType=CHAR}, #{adatanl,jdbcType=DATE}, 
+      #{adatacti,jdbcType=DATE}, #{arefknd,jdbcType=CHAR}, #{awerber,jdbcType=CHAR}, 
+      #{abetreur,jdbcType=CHAR}, #{agruppe,jdbcType=CHAR}, #{aabwickl,jdbcType=CHAR}, 
+      #{apacksei,jdbcType=DECIMAL}, #{aliefsei,jdbcType=DECIMAL}, #{awaehrvk,jdbcType=CHAR}, 
+      #{awaehrek,jdbcType=CHAR}, #{ahu1,jdbcType=CHAR}, #{ahu2,jdbcType=CHAR}, #{ahu3,jdbcType=CHAR}, 
+      #{ahu4,jdbcType=CHAR}, #{ahu5,jdbcType=CHAR}, #{ahu6,jdbcType=CHAR}, #{ahu7,jdbcType=CHAR}, 
+      #{ahu8,jdbcType=CHAR}, #{ahu9,jdbcType=CHAR}, #{anu11,jdbcType=CHAR}, #{anu12,jdbcType=CHAR}, 
+      #{anu21,jdbcType=CHAR}, #{anu22,jdbcType=CHAR}, #{anu31,jdbcType=CHAR}, #{anu32,jdbcType=CHAR}, 
+      #{anu41,jdbcType=CHAR}, #{anu42,jdbcType=CHAR}, #{anu51,jdbcType=CHAR}, #{anu52,jdbcType=CHAR}, 
+      #{anu61,jdbcType=CHAR}, #{anu62,jdbcType=CHAR}, #{anu71,jdbcType=CHAR}, #{anu72,jdbcType=CHAR}, 
+      #{anu81,jdbcType=CHAR}, #{anu82,jdbcType=CHAR}, #{anu91,jdbcType=CHAR}, #{anu92,jdbcType=CHAR}, 
+      #{aliefdat,jdbcType=DATE}, #{arngdat,jdbcType=DATE}, #{aliefnr,jdbcType=CHAR}, 
+      #{arngnr,jdbcType=CHAR}, #{arem1,jdbcType=CHAR}, #{arem2,jdbcType=CHAR}, #{arem3,jdbcType=CHAR}, 
+      #{arem4,jdbcType=CHAR}, #{arem5,jdbcType=CHAR}, #{aowner,jdbcType=CHAR}, #{aaufschlag,jdbcType=DECIMAL}, 
+      #{stamp,jdbcType=CHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.com.casherp.entity.AuftragDAO">
+    insert into auftrag
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="pkAuftrag != null">
+        PK_AUFTRAG,
+      </if>
+      <if test="fkKunden != null">
+        FK_KUNDEN,
+      </if>
+      <if test="fkLaddr != null">
+        FK_LADDR,
+      </if>
+      <if test="aaufno != null">
+        AAUFNO,
+      </if>
+      <if test="akukurz != null">
+        AKUKURZ,
+      </if>
+      <if test="atyp != null">
+        ATYP,
+      </if>
+      <if test="adatanl != null">
+        ADATANL,
+      </if>
+      <if test="adatacti != null">
+        ADATACTI,
+      </if>
+      <if test="arefknd != null">
+        AREFKND,
+      </if>
+      <if test="awerber != null">
+        AWERBER,
+      </if>
+      <if test="abetreur != null">
+        ABETREUR,
+      </if>
+      <if test="agruppe != null">
+        AGRUPPE,
+      </if>
+      <if test="aabwickl != null">
+        AABWICKL,
+      </if>
+      <if test="apacksei != null">
+        APACKSEI,
+      </if>
+      <if test="aliefsei != null">
+        ALIEFSEI,
+      </if>
+      <if test="awaehrvk != null">
+        AWAEHRVK,
+      </if>
+      <if test="awaehrek != null">
+        AWAEHREK,
+      </if>
+      <if test="ahu1 != null">
+        AHU1,
+      </if>
+      <if test="ahu2 != null">
+        AHU2,
+      </if>
+      <if test="ahu3 != null">
+        AHU3,
+      </if>
+      <if test="ahu4 != null">
+        AHU4,
+      </if>
+      <if test="ahu5 != null">
+        AHU5,
+      </if>
+      <if test="ahu6 != null">
+        AHU6,
+      </if>
+      <if test="ahu7 != null">
+        AHU7,
+      </if>
+      <if test="ahu8 != null">
+        AHU8,
+      </if>
+      <if test="ahu9 != null">
+        AHU9,
+      </if>
+      <if test="anu11 != null">
+        ANU11,
+      </if>
+      <if test="anu12 != null">
+        ANU12,
+      </if>
+      <if test="anu21 != null">
+        ANU21,
+      </if>
+      <if test="anu22 != null">
+        ANU22,
+      </if>
+      <if test="anu31 != null">
+        ANU31,
+      </if>
+      <if test="anu32 != null">
+        ANU32,
+      </if>
+      <if test="anu41 != null">
+        ANU41,
+      </if>
+      <if test="anu42 != null">
+        ANU42,
+      </if>
+      <if test="anu51 != null">
+        ANU51,
+      </if>
+      <if test="anu52 != null">
+        ANU52,
+      </if>
+      <if test="anu61 != null">
+        ANU61,
+      </if>
+      <if test="anu62 != null">
+        ANU62,
+      </if>
+      <if test="anu71 != null">
+        ANU71,
+      </if>
+      <if test="anu72 != null">
+        ANU72,
+      </if>
+      <if test="anu81 != null">
+        ANU81,
+      </if>
+      <if test="anu82 != null">
+        ANU82,
+      </if>
+      <if test="anu91 != null">
+        ANU91,
+      </if>
+      <if test="anu92 != null">
+        ANU92,
+      </if>
+      <if test="aliefdat != null">
+        ALIEFDAT,
+      </if>
+      <if test="arngdat != null">
+        ARNGDAT,
+      </if>
+      <if test="aliefnr != null">
+        ALIEFNR,
+      </if>
+      <if test="arngnr != null">
+        ARNGNR,
+      </if>
+      <if test="arem1 != null">
+        AREM1,
+      </if>
+      <if test="arem2 != null">
+        AREM2,
+      </if>
+      <if test="arem3 != null">
+        AREM3,
+      </if>
+      <if test="arem4 != null">
+        AREM4,
+      </if>
+      <if test="arem5 != null">
+        AREM5,
+      </if>
+      <if test="aowner != null">
+        AOWNER,
+      </if>
+      <if test="aaufschlag != null">
+        AAUFSCHLAG,
+      </if>
+      <if test="stamp != null">
+        STAMP,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="pkAuftrag != null">
+        #{pkAuftrag,jdbcType=INTEGER},
+      </if>
+      <if test="fkKunden != null">
+        #{fkKunden,jdbcType=INTEGER},
+      </if>
+      <if test="fkLaddr != null">
+        #{fkLaddr,jdbcType=INTEGER},
+      </if>
+      <if test="aaufno != null">
+        #{aaufno,jdbcType=CHAR},
+      </if>
+      <if test="akukurz != null">
+        #{akukurz,jdbcType=CHAR},
+      </if>
+      <if test="atyp != null">
+        #{atyp,jdbcType=CHAR},
+      </if>
+      <if test="adatanl != null">
+        #{adatanl,jdbcType=DATE},
+      </if>
+      <if test="adatacti != null">
+        #{adatacti,jdbcType=DATE},
+      </if>
+      <if test="arefknd != null">
+        #{arefknd,jdbcType=CHAR},
+      </if>
+      <if test="awerber != null">
+        #{awerber,jdbcType=CHAR},
+      </if>
+      <if test="abetreur != null">
+        #{abetreur,jdbcType=CHAR},
+      </if>
+      <if test="agruppe != null">
+        #{agruppe,jdbcType=CHAR},
+      </if>
+      <if test="aabwickl != null">
+        #{aabwickl,jdbcType=CHAR},
+      </if>
+      <if test="apacksei != null">
+        #{apacksei,jdbcType=DECIMAL},
+      </if>
+      <if test="aliefsei != null">
+        #{aliefsei,jdbcType=DECIMAL},
+      </if>
+      <if test="awaehrvk != null">
+        #{awaehrvk,jdbcType=CHAR},
+      </if>
+      <if test="awaehrek != null">
+        #{awaehrek,jdbcType=CHAR},
+      </if>
+      <if test="ahu1 != null">
+        #{ahu1,jdbcType=CHAR},
+      </if>
+      <if test="ahu2 != null">
+        #{ahu2,jdbcType=CHAR},
+      </if>
+      <if test="ahu3 != null">
+        #{ahu3,jdbcType=CHAR},
+      </if>
+      <if test="ahu4 != null">
+        #{ahu4,jdbcType=CHAR},
+      </if>
+      <if test="ahu5 != null">
+        #{ahu5,jdbcType=CHAR},
+      </if>
+      <if test="ahu6 != null">
+        #{ahu6,jdbcType=CHAR},
+      </if>
+      <if test="ahu7 != null">
+        #{ahu7,jdbcType=CHAR},
+      </if>
+      <if test="ahu8 != null">
+        #{ahu8,jdbcType=CHAR},
+      </if>
+      <if test="ahu9 != null">
+        #{ahu9,jdbcType=CHAR},
+      </if>
+      <if test="anu11 != null">
+        #{anu11,jdbcType=CHAR},
+      </if>
+      <if test="anu12 != null">
+        #{anu12,jdbcType=CHAR},
+      </if>
+      <if test="anu21 != null">
+        #{anu21,jdbcType=CHAR},
+      </if>
+      <if test="anu22 != null">
+        #{anu22,jdbcType=CHAR},
+      </if>
+      <if test="anu31 != null">
+        #{anu31,jdbcType=CHAR},
+      </if>
+      <if test="anu32 != null">
+        #{anu32,jdbcType=CHAR},
+      </if>
+      <if test="anu41 != null">
+        #{anu41,jdbcType=CHAR},
+      </if>
+      <if test="anu42 != null">
+        #{anu42,jdbcType=CHAR},
+      </if>
+      <if test="anu51 != null">
+        #{anu51,jdbcType=CHAR},
+      </if>
+      <if test="anu52 != null">
+        #{anu52,jdbcType=CHAR},
+      </if>
+      <if test="anu61 != null">
+        #{anu61,jdbcType=CHAR},
+      </if>
+      <if test="anu62 != null">
+        #{anu62,jdbcType=CHAR},
+      </if>
+      <if test="anu71 != null">
+        #{anu71,jdbcType=CHAR},
+      </if>
+      <if test="anu72 != null">
+        #{anu72,jdbcType=CHAR},
+      </if>
+      <if test="anu81 != null">
+        #{anu81,jdbcType=CHAR},
+      </if>
+      <if test="anu82 != null">
+        #{anu82,jdbcType=CHAR},
+      </if>
+      <if test="anu91 != null">
+        #{anu91,jdbcType=CHAR},
+      </if>
+      <if test="anu92 != null">
+        #{anu92,jdbcType=CHAR},
+      </if>
+      <if test="aliefdat != null">
+        #{aliefdat,jdbcType=DATE},
+      </if>
+      <if test="arngdat != null">
+        #{arngdat,jdbcType=DATE},
+      </if>
+      <if test="aliefnr != null">
+        #{aliefnr,jdbcType=CHAR},
+      </if>
+      <if test="arngnr != null">
+        #{arngnr,jdbcType=CHAR},
+      </if>
+      <if test="arem1 != null">
+        #{arem1,jdbcType=CHAR},
+      </if>
+      <if test="arem2 != null">
+        #{arem2,jdbcType=CHAR},
+      </if>
+      <if test="arem3 != null">
+        #{arem3,jdbcType=CHAR},
+      </if>
+      <if test="arem4 != null">
+        #{arem4,jdbcType=CHAR},
+      </if>
+      <if test="arem5 != null">
+        #{arem5,jdbcType=CHAR},
+      </if>
+      <if test="aowner != null">
+        #{aowner,jdbcType=CHAR},
+      </if>
+      <if test="aaufschlag != null">
+        #{aaufschlag,jdbcType=DECIMAL},
+      </if>
+      <if test="stamp != null">
+        #{stamp,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

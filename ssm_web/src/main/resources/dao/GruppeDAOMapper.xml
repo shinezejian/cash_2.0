@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cash.erp.dao.GruppeDAOMapper">
+  <resultMap id="BaseResultMap" type="com.com.casherp.entity.GruppeDAO">
+    <id column="PK_GRUPPE" jdbcType="INTEGER" property="pkGruppe" />
+    <result column="NAME" jdbcType="VARCHAR" property="name" />
+    <result column="STATUS" jdbcType="CHAR" property="status" />
+    <result column="ALLOW_CASH" jdbcType="CHAR" property="allowCash" />
+    <result column="ALLOW_ACCOUNTING" jdbcType="CHAR" property="allowAccounting" />
+    <result column="ALLOW_SYSTEM" jdbcType="CHAR" property="allowSystem" />
+    <result column="ALLOW_ADMIN" jdbcType="CHAR" property="allowAdmin" />
+    <result column="REM" jdbcType="VARCHAR" property="rem" />
+    <result column="STAMP" jdbcType="VARCHAR" property="stamp" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    PK_GRUPPE, NAME, STATUS, ALLOW_CASH, ALLOW_ACCOUNTING, ALLOW_SYSTEM, ALLOW_ADMIN, 
+    REM, STAMP
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from gruppe
+    where PK_GRUPPE = #{pkGruppe,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from gruppe
+    where PK_GRUPPE = #{pkGruppe,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.com.casherp.entity.GruppeDAO">
+    insert into gruppe (PK_GRUPPE, NAME, STATUS, 
+      ALLOW_CASH, ALLOW_ACCOUNTING, ALLOW_SYSTEM, 
+      ALLOW_ADMIN, REM, STAMP
+      )
+    values (#{pkGruppe,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{status,jdbcType=CHAR}, 
+      #{allowCash,jdbcType=CHAR}, #{allowAccounting,jdbcType=CHAR}, #{allowSystem,jdbcType=CHAR}, 
+      #{allowAdmin,jdbcType=CHAR}, #{rem,jdbcType=VARCHAR}, #{stamp,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.com.casherp.entity.GruppeDAO">
+    insert into gruppe
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="pkGruppe != null">
+        PK_GRUPPE,
+      </if>
+      <if test="name != null">
+        NAME,
+      </if>
+      <if test="status != null">
+        STATUS,
+      </if>
+      <if test="allowCash != null">
+        ALLOW_CASH,
+      </if>
+      <if test="allowAccounting != null">
+        ALLOW_ACCOUNTING,
+      </if>
+      <if test="allowSystem != null">
+        ALLOW_SYSTEM,
+      </if>
+      <if test="allowAdmin != null">
+        ALLOW_ADMIN,
+      </if>
+      <if test="rem != null">
+        REM,
+      </if>
+      <if test="stamp != null">
+        STAMP,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="pkGruppe != null">
+        #{pkGruppe,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=CHAR},
+      </if>
+      <if test="allowCash != null">
+        #{allowCash,jdbcType=CHAR},
+      </if>
+      <if test="allowAccounting != null">
+        #{allowAccounting,jdbcType=CHAR},
+      </if>
+      <if test="allowSystem != null">
+        #{allowSystem,jdbcType=CHAR},
+      </if>
+      <if test="allowAdmin != null">
+        #{allowAdmin,jdbcType=CHAR},
+      </if>
+      <if test="rem != null">
+        #{rem,jdbcType=VARCHAR},
+      </if>
+      <if test="stamp != null">
+        #{stamp,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.com.casherp.entity.GruppeDAO">
+    update gruppe
+    <set>
+      <if test="name != null">
+        NAME = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        STATUS = #{status,jdbcType=CHAR},
+      </if>
+      <if test="allowCash != null">
+        ALLOW_CASH = #{allowCash,jdbcType=CHAR},
+      </if>
+      <if test="allowAccounting != null">
+        ALLOW_ACCOUNTING = #{allowAccounting,jdbcType=CHAR},
+      </if>
+      <if test="allowSystem != null">
+        ALLOW_SYSTEM = #{allowSystem,jdbcType=CHAR},
+      </if>
+      <if test="allowAdmin != null">
+        ALLOW_ADMIN = #{allowAdmin,jdbcType=CHAR},
+      </if>
+      <if test="rem != null">
+        REM = #{rem,jdbcType=VARCHAR},
+      </if>
+      <if test="stamp != null">
+        STAMP = #{stamp,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where PK_GRUPPE = #{pkGruppe,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.com.casherp.entity.GruppeDAO">
+    update gruppe
+    set NAME = #{name,jdbcType=VARCHAR},
+      STATUS = #{status,jdbcType=CHAR},
+      ALLOW_CASH = #{allowCash,jdbcType=CHAR},
+      ALLOW_ACCOUNTING = #{allowAccounting,jdbcType=CHAR},
+      ALLOW_SYSTEM = #{allowSystem,jdbcType=CHAR},
+      ALLOW_ADMIN = #{allowAdmin,jdbcType=CHAR},
+      REM = #{rem,jdbcType=VARCHAR},
+      STAMP = #{stamp,jdbcType=VARCHAR}
+    where PK_GRUPPE = #{pkGruppe,jdbcType=INTEGER}
+  </update>
+</mapper>

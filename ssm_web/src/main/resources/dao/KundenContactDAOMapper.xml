@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cash.erp.dao.KundenContactDAOMapper">
+  <resultMap id="BaseResultMap" type="com.com.casherp.entity.KundenContactDAO">
+    <id column="PK_KUNDENCONTACT" jdbcType="INTEGER" property="pkKundencontact" />
+    <result column="FK_KUNDEN" jdbcType="INTEGER" property="fkKunden" />
+    <result column="NAME" jdbcType="VARCHAR" property="name" />
+    <result column="VORNAME" jdbcType="VARCHAR" property="vorname" />
+    <result column="COMPANY" jdbcType="VARCHAR" property="company" />
+    <result column="STREET" jdbcType="VARCHAR" property="street" />
+    <result column="BLZ" jdbcType="VARCHAR" property="blz" />
+    <result column="ORT" jdbcType="VARCHAR" property="ort" />
+    <result column="STATE" jdbcType="VARCHAR" property="state" />
+    <result column="COUNTRY" jdbcType="VARCHAR" property="country" />
+    <result column="TEL" jdbcType="VARCHAR" property="tel" />
+    <result column="FAX" jdbcType="VARCHAR" property="fax" />
+    <result column="EMAIL" jdbcType="VARCHAR" property="email" />
+    <result column="TEL_PRIVATE" jdbcType="VARCHAR" property="telPrivate" />
+    <result column="EMAIL_PRIVATE" jdbcType="VARCHAR" property="emailPrivate" />
+    <result column="WEBSITE" jdbcType="VARCHAR" property="website" />
+    <result column="REMARKS" jdbcType="VARCHAR" property="remarks" />
+    <result column="STAMP" jdbcType="VARCHAR" property="stamp" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    PK_KUNDENCONTACT, FK_KUNDEN, NAME, VORNAME, COMPANY, STREET, BLZ, ORT, STATE, COUNTRY, 
+    TEL, FAX, EMAIL, TEL_PRIVATE, EMAIL_PRIVATE, WEBSITE, REMARKS, STAMP
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from kunden_contact
+    where PK_KUNDENCONTACT = #{pkKundencontact,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from kunden_contact
+    where PK_KUNDENCONTACT = #{pkKundencontact,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.com.casherp.entity.KundenContactDAO">
+    insert into kunden_contact (PK_KUNDENCONTACT, FK_KUNDEN, NAME, 
+      VORNAME, COMPANY, STREET, 
+      BLZ, ORT, STATE, COUNTRY, 
+      TEL, FAX, EMAIL, TEL_PRIVATE, 
+      EMAIL_PRIVATE, WEBSITE, REMARKS, 
+      STAMP)
+    values (#{pkKundencontact,jdbcType=INTEGER}, #{fkKunden,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, 
+      #{vorname,jdbcType=VARCHAR}, #{company,jdbcType=VARCHAR}, #{street,jdbcType=VARCHAR}, 
+      #{blz,jdbcType=VARCHAR}, #{ort,jdbcType=VARCHAR}, #{state,jdbcType=VARCHAR}, #{country,jdbcType=VARCHAR}, 
+      #{tel,jdbcType=VARCHAR}, #{fax,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{telPrivate,jdbcType=VARCHAR}, 
+      #{emailPrivate,jdbcType=VARCHAR}, #{website,jdbcType=VARCHAR}, #{remarks,jdbcType=VARCHAR}, 
+      #{stamp,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.com.casherp.entity.KundenContactDAO">
+    insert into kunden_contact
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="pkKundencontact != null">
+        PK_KUNDENCONTACT,
+      </if>
+      <if test="fkKunden != null">
+        FK_KUNDEN,
+      </if>
+      <if test="name != null">
+        NAME,
+      </if>
+      <if test="vorname != null">
+        VORNAME,
+      </if>
+      <if test="company != null">
+        COMPANY,
+      </if>
+      <if test="street != null">
+        STREET,
+      </if>
+      <if test="blz != null">
+        BLZ,
+      </if>
+      <if test="ort != null">
+        ORT,
+      </if>
+      <if test="state != null">
+        STATE,
+      </if>
+      <if test="country != null">
+        COUNTRY,
+      </if>
+      <if test="tel != null">
+        TEL,
+      </if>
+      <if test="fax != null">
+        FAX,
+      </if>
+      <if test="email != null">
+        EMAIL,
+      </if>
+      <if test="telPrivate != null">
+        TEL_PRIVATE,
+      </if>
+      <if test="emailPrivate != null">
+        EMAIL_PRIVATE,
+      </if>
+      <if test="website != null">
+        WEBSITE,
+      </if>
+      <if test="remarks != null">
+        REMARKS,
+      </if>
+      <if test="stamp != null">
+        STAMP,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="pkKundencontact != null">
+        #{pkKundencontact,jdbcType=INTEGER},
+      </if>
+      <if test="fkKunden != null">
+        #{fkKunden,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="vorname != null">
+        #{vorname,jdbcType=VARCHAR},
+      </if>
+      <if test="company != null">
+        #{company,jdbcType=VARCHAR},
+      </if>
+      <if test="street != null">
+        #{street,jdbcType=VARCHAR},
+      </if>
+      <if test="blz != null">
+        #{blz,jdbcType=VARCHAR},
+      </if>
+      <if test="ort != null">
+        #{ort,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null">
+        #{state,jdbcType=VARCHAR},
+      </if>
+      <if test="country != null">
+        #{country,jdbcType=VARCHAR},
+      </if>
+      <if test="tel != null">
+        #{tel,jdbcType=VARCHAR},
+      </if>
+      <if test="fax != null">
+        #{fax,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="telPrivate != null">
+        #{telPrivate,jdbcType=VARCHAR},
+      </if>
+      <if test="emailPrivate != null">
+        #{emailPrivate,jdbcType=VARCHAR},
+      </if>
+      <if test="website != null">
+        #{website,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks != null">
+        #{remarks,jdbcType=VARCHAR},
+      </if>
+      <if test="stamp != null">
+        #{stamp,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.com.casherp.entity.KundenContactDAO">
+    update kunden_contact
+    <set>
+      <if test="fkKunden != null">
+        FK_KUNDEN = #{fkKunden,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        NAME = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="vorname != null">
+        VORNAME = #{vorname,jdbcType=VARCHAR},
+      </if>
+      <if test="company != null">
+        COMPANY = #{company,jdbcType=VARCHAR},
+      </if>
+      <if test="street != null">
+        STREET = #{street,jdbcType=VARCHAR},
+      </if>
+      <if test="blz != null">
+        BLZ = #{blz,jdbcType=VARCHAR},
+      </if>
+      <if test="ort != null">
+        ORT = #{ort,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null">
+        STATE = #{state,jdbcType=VARCHAR},
+      </if>
+      <if test="country != null">
+        COUNTRY = #{country,jdbcType=VARCHAR},
+      </if>
+      <if test="tel != null">
+        TEL = #{tel,jdbcType=VARCHAR},
+      </if>
+      <if test="fax != null">
+        FAX = #{fax,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        EMAIL = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="telPrivate != null">
+        TEL_PRIVATE = #{telPrivate,jdbcType=VARCHAR},
+      </if>
+      <if test="emailPrivate != null">
+        EMAIL_PRIVATE = #{emailPrivate,jdbcType=VARCHAR},
+      </if>
+      <if test="website != null">
+        WEBSITE = #{website,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks != null">
+        REMARKS = #{remarks,jdbcType=VARCHAR},
+      </if>
+      <if test="stamp != null">
+        STAMP = #{stamp,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where PK_KUNDENCONTACT = #{pkKundencontact,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.com.casherp.entity.KundenContactDAO">
+    update kunden_contact
+    set FK_KUNDEN = #{fkKunden,jdbcType=INTEGER},
+      NAME = #{name,jdbcType=VARCHAR},
+      VORNAME = #{vorname,jdbcType=VARCHAR},
+      COMPANY = #{company,jdbcType=VARCHAR},
+      STREET = #{street,jdbcType=VARCHAR},
+      BLZ = #{blz,jdbcType=VARCHAR},
+      ORT = #{ort,jdbcType=VARCHAR},
+      STATE = #{state,jdbcType=VARCHAR},
+      COUNTRY = #{country,jdbcType=VARCHAR},
+      TEL = #{tel,jdbcType=VARCHAR},
+      FAX = #{fax,jdbcType=VARCHAR},
+      EMAIL = #{email,jdbcType=VARCHAR},
+      TEL_PRIVATE = #{telPrivate,jdbcType=VARCHAR},
+      EMAIL_PRIVATE = #{emailPrivate,jdbcType=VARCHAR},
+      WEBSITE = #{website,jdbcType=VARCHAR},
+      REMARKS = #{remarks,jdbcType=VARCHAR},
+      STAMP = #{stamp,jdbcType=VARCHAR}
+    where PK_KUNDENCONTACT = #{pkKundencontact,jdbcType=INTEGER}
+  </update>
+</mapper>

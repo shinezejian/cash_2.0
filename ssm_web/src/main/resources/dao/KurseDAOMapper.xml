@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cash.erp.dao.KurseDAOMapper">
+  <resultMap id="BaseResultMap" type="com.com.casherp.entity.KurseDAO">
+    <result column="PK_KURSE" jdbcType="INTEGER" property="pkKurse" />
+    <result column="KWAE" jdbcType="CHAR" property="kwae" />
+    <result column="KLAND" jdbcType="CHAR" property="kland" />
+    <result column="KKURS" jdbcType="DECIMAL" property="kkurs" />
+    <result column="KFIXED" jdbcType="CHAR" property="kfixed" />
+    <result column="KLAST" jdbcType="DATE" property="klast" />
+    <result column="STAMP" jdbcType="CHAR" property="stamp" />
+  </resultMap>
+  <insert id="insert" parameterType="com.com.casherp.entity.KurseDAO">
+    insert into kurse (PK_KURSE, KWAE, KLAND, 
+      KKURS, KFIXED, KLAST, STAMP
+      )
+    values (#{pkKurse,jdbcType=INTEGER}, #{kwae,jdbcType=CHAR}, #{kland,jdbcType=CHAR}, 
+      #{kkurs,jdbcType=DECIMAL}, #{kfixed,jdbcType=CHAR}, #{klast,jdbcType=DATE}, #{stamp,jdbcType=CHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.com.casherp.entity.KurseDAO">
+    insert into kurse
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="pkKurse != null">
+        PK_KURSE,
+      </if>
+      <if test="kwae != null">
+        KWAE,
+      </if>
+      <if test="kland != null">
+        KLAND,
+      </if>
+      <if test="kkurs != null">
+        KKURS,
+      </if>
+      <if test="kfixed != null">
+        KFIXED,
+      </if>
+      <if test="klast != null">
+        KLAST,
+      </if>
+      <if test="stamp != null">
+        STAMP,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="pkKurse != null">
+        #{pkKurse,jdbcType=INTEGER},
+      </if>
+      <if test="kwae != null">
+        #{kwae,jdbcType=CHAR},
+      </if>
+      <if test="kland != null">
+        #{kland,jdbcType=CHAR},
+      </if>
+      <if test="kkurs != null">
+        #{kkurs,jdbcType=DECIMAL},
+      </if>
+      <if test="kfixed != null">
+        #{kfixed,jdbcType=CHAR},
+      </if>
+      <if test="klast != null">
+        #{klast,jdbcType=DATE},
+      </if>
+      <if test="stamp != null">
+        #{stamp,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>
