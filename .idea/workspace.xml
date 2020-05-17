@@ -5,7 +5,31 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9611b72e-d474-4abc-a999-9353cfecc683" name="Default Changelist" comment="" />
+    <list default="true" id="9611b72e-d474-4abc-a999-9353cfecc683" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/ssm_web/src/main/webapp/failer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/ssm_web/src/main/webapp/failer.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssm_web/src/main/webapp/pages/all-admin-dataform.html" beforeDir="false" afterPath="$PROJECT_DIR$/ssm_web/src/main/webapp/pages/all-admin-dataform.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssm_web/src/main/webapp/pages/log-page-list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/ssm_web/src/main/webapp/pages/log-page-list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssm_web/src/main/webapp/pages/main.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/ssm_web/src/main/webapp/pages/main.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssm_web/src/main/webapp/pages/orders-list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/ssm_web/src/main/webapp/pages/orders-list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssm_web/src/main/webapp/pages/orders-page-list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/ssm_web/src/main/webapp/pages/orders-page-list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssm_web/src/main/webapp/pages/orders-show.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/ssm_web/src/main/webapp/pages/orders-show.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssm_web/src/main/webapp/pages/permission-add.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/ssm_web/src/main/webapp/pages/permission-add.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssm_web/src/main/webapp/pages/permission-list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/ssm_web/src/main/webapp/pages/permission-list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssm_web/src/main/webapp/pages/permission-show.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/ssm_web/src/main/webapp/pages/permission-show.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssm_web/src/main/webapp/pages/product-add.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/ssm_web/src/main/webapp/pages/product-add.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssm_web/src/main/webapp/pages/product-list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/ssm_web/src/main/webapp/pages/product-list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssm_web/src/main/webapp/pages/product-page-list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/ssm_web/src/main/webapp/pages/product-page-list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssm_web/src/main/webapp/pages/role-add.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/ssm_web/src/main/webapp/pages/role-add.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssm_web/src/main/webapp/pages/role-list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/ssm_web/src/main/webapp/pages/role-list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssm_web/src/main/webapp/pages/role-permission-add.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/ssm_web/src/main/webapp/pages/role-permission-add.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssm_web/src/main/webapp/pages/role-show.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/ssm_web/src/main/webapp/pages/role-show.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssm_web/src/main/webapp/pages/syslog-list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/ssm_web/src/main/webapp/pages/syslog-list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssm_web/src/main/webapp/pages/user-add.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/ssm_web/src/main/webapp/pages/user-add.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssm_web/src/main/webapp/pages/user-list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/ssm_web/src/main/webapp/pages/user-list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssm_web/src/main/webapp/pages/user-role-add.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/ssm_web/src/main/webapp/pages/user-role-add.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssm_web/src/main/webapp/pages/user-show.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/ssm_web/src/main/webapp/pages/user-show.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssm_web/src/main/webapp/pages/user-show1.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/ssm_web/src/main/webapp/pages/user-show1.jsp" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,7 +40,85 @@
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="preferences.fileTypes" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Tomcat9" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.35" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/ssm_web_war_exploded/" />
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="ssm_web:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/ssm_web_war_exploded" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_SSM_Maneger_DEMO" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="55350" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="ssm_web:war exploded" />
+        </option>
+      </method>
+    </configuration>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -37,6 +139,14 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="318" y="-947" key="#Project_Structure" timestamp="1589724007240">
+      <screen x="-165" y="-1057" width="1920" height="1057" />
+    </state>
+    <state x="318" y="-947" key="#Project_Structure/48.23.1632.1027/-165.-1057.1920.1057@-165.-1057.1920.1057" timestamp="1589724007240" />
+    <state x="294" y="-867" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1589725163491">
+      <screen x="-165" y="-1057" width="1920" height="1057" />
+    </state>
+    <state x="294" y="-867" key="#com.intellij.execution.impl.EditConfigurationsDialog/48.23.1632.1027/-165.-1057.1920.1057@-165.-1057.1920.1057" timestamp="1589725163491" />
     <state x="673" y="-625" key="Github.ShareDialog" timestamp="1589722964886">
       <screen x="-165" y="-1057" width="1920" height="1057" />
     </state>
@@ -49,6 +159,10 @@
       <screen x="-165" y="-1057" width="1920" height="1057" />
     </state>
     <state x="304" y="-890" key="SettingsEditor/48.23.1632.1027/-165.-1057.1920.1057@-165.-1057.1920.1057" timestamp="1589721027461" />
+    <state x="536" y="-772" width="588" height="486" key="find.popup" timestamp="1589724984630">
+      <screen x="-165" y="-1057" width="1920" height="1057" />
+    </state>
+    <state x="536" y="-772" width="588" height="486" key="find.popup/48.23.1632.1027/-165.-1057.1920.1057@-165.-1057.1920.1057" timestamp="1589724984630" />
     <state x="640" y="-633" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1589722799384">
       <screen x="-165" y="-1057" width="1920" height="1057" />
     </state>

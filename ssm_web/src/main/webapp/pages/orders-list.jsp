@@ -13,8 +13,8 @@
 
 
 <title>订单详情</title>
-<meta name="description" content="AdminLTE2定制版">
-<meta name="keywords" content="AdminLTE2定制版">
+<meta name="description" content="Cash 2.0">
+<meta name="keywords" content="Cash 2.0">
 
 
 
